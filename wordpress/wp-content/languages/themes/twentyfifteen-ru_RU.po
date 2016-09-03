@@ -2,26 +2,29 @@
 # This file is distributed under the same license as the Twenty Fifteen package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2015-08-18 16:52:11+0000\n"
+"PO-Revision-Date: 2015-07-27 00:26:43+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
-"X-Generator: GlotPress/2.1.0-alpha\n"
+"X-Generator: GlotPress/1.0-alpha-1100\n"
 "Project-Id-Version: Twenty Fifteen\n"
+
+#. Author of the plugin/theme
+msgid "the WordPress team"
+msgstr "Команда WordPress"
 
 #. Description of the plugin/theme
 msgid "Our 2015 default theme is clean, blog-focused, and designed for clarity. Twenty Fifteen's simple, straightforward typography is readable on a wide variety of screen sizes, and suitable for multiple languages. We designed it using a mobile-first approach, meaning your content takes center-stage, regardless of whether your visitors arrive by smartphone, tablet, laptop, or desktop computer."
 msgstr "В 2015 году наша тема по умолчанию ориентирована на блоги и отличается наглядностью. Простые шрифты Twenty Fourteen легко читаются на экранах разных размеров и подходят для многих языков. Тема разрабатывалась в первую очередь для мобильных устройств, поэтому основное внимание уделяется вашему контенту, где бы его ни просматривали: на смартфоне, планшете, ноутбуке или настольном компьютере."
 
+#. Theme URI of the plugin/theme
+msgid "https://wordpress.org/themes/twentyfifteen/"
+msgstr "https://wordpress.org/themes/twentyfifteen/"
+
 #. Theme Name of the plugin/theme
 msgid "Twenty Fifteen"
 msgstr "Twenty Fifteen"
-
-#. translators: %s: post title
-#: inc/template-tags.php:123
-msgid "Leave a comment<span class=\"screen-reader-text\"> on %s</span>"
-msgstr "Добавить комментарий<span class=\"screen-reader-text\"> к записи %s</span>"
 
 #: single.php:37
 msgid "Previous post:"
@@ -42,6 +45,18 @@ msgstr "Далее"
 #: search.php:18
 msgid "Search Results for: %s"
 msgstr "Результаты поиска: %s"
+
+#: inc/template-tags.php:122
+msgid "% Comments"
+msgstr "Комментарии (%)"
+
+#: inc/template-tags.php:122
+msgid "1 Comment"
+msgstr "1 комментарий"
+
+#: inc/template-tags.php:122
+msgid "Leave a comment"
+msgstr "Добавить комментарий"
 
 #: inc/template-tags.php:113
 msgctxt "Used before full size attachment link."
@@ -68,15 +83,15 @@ msgctxt "Used before post author name."
 msgid "Author"
 msgstr "Автор"
 
-#: inc/template-tags.php:76
-msgctxt "Used before publish date."
-msgid "Posted on"
-msgstr "Опубликовано"
-
 #: inc/template-tags.php:55
 msgctxt "Used before post format."
 msgid "Format"
 msgstr "Формат"
+
+#: inc/template-tags.php:76
+msgctxt "Used before publish date."
+msgid "Posted on"
+msgstr "Опубликовано"
 
 #: inc/template-tags.php:49
 msgid "Featured"
@@ -94,45 +109,45 @@ msgstr "Предыдущие комментарии"
 msgid "Comment navigation"
 msgstr "Навигация по комментариям"
 
-#: inc/customizer.php:205
+#: inc/customizer.php:147
 msgid "Blue"
-msgstr "Синий"
+msgstr "Синяя"
 
-#: inc/customizer.php:194
+#: inc/customizer.php:136
 msgid "Purple"
-msgstr "Пурпурный"
+msgstr "Пурпурная"
 
-#: inc/customizer.php:183
+#: inc/customizer.php:125
 msgid "Pink"
-msgstr "Розовый"
+msgstr "Розовая"
 
-#: inc/customizer.php:172
+#: inc/customizer.php:114
 msgid "Yellow"
-msgstr "Жёлтый"
+msgstr "Жёлтая"
 
-#: inc/customizer.php:161
+#: inc/customizer.php:103
 msgid "Dark"
-msgstr "Тёмный"
+msgstr "Тёмная"
 
-#: inc/customizer.php:150
+#: inc/customizer.php:92
 msgid "Default"
 msgstr "По умолчанию"
 
-#: inc/customizer.php:75
+#: inc/customizer.php:62
 msgid "Header and Sidebar Background Color"
 msgstr "Цвет фона заголовка и боковой колонки"
 
-#: inc/customizer.php:60 inc/customizer.php:76 inc/customizer.php:81
+#: inc/customizer.php:47 inc/customizer.php:63 inc/customizer.php:68
 msgid "Applied to the header on small screens and the sidebar on wide screens."
 msgstr "Применяется к заголовку на маленьких экранах и к боковой колонке на широких."
 
-#: inc/customizer.php:59
-msgid "Header and Sidebar Text Color"
-msgstr "Цвет текста заголовка и боковой колонки"
-
-#: inc/customizer.php:44
+#: inc/customizer.php:31
 msgid "Base Color Scheme"
 msgstr "Основная цветовая схема"
+
+#: inc/customizer.php:46
+msgid "Header and Sidebar Text Color"
+msgstr "Цвет текста заголовка и боковой колонки"
 
 #: inc/back-compat.php:37 inc/back-compat.php:47 inc/back-compat.php:60
 msgid "Twenty Fifteen requires at least WordPress version 4.1. You are running version %s. Please upgrade and try again."
@@ -147,30 +162,30 @@ msgstr "<span class=\"meta-nav\">Опубликовано в</span><span class=\
 msgid "Next Image"
 msgstr "Следующее изображение"
 
+#: header.php:43
+msgid "Menu and widgets"
+msgstr "Меню и виджеты"
+
 #: image.php:24
 msgid "Previous Image"
 msgstr "Предыдущее изображение"
-
-#: header.php:45
-msgid "Menu and widgets"
-msgstr "Меню и виджеты"
 
 #: header.php:26
 msgid "Skip to content"
 msgstr "Перейти к содержимому"
 
-#: functions.php:270
+#: functions.php:256
 msgid "collapse child menu"
 msgstr "свернуть дочернее меню"
 
-#: functions.php:269
+#: functions.php:255
 msgid "expand child menu"
 msgstr "раскрыть дочернее меню"
 
 #. Translators: To add an additional character subset specific to your
 #. language, translate this to 'greek', 'cyrillic', 'devanagari' or
 #. 'vietnamese'. Do not translate into your own language.
-#: functions.php:199
+#: functions.php:185
 msgctxt "Add new subset (greek, cyrillic, devanagari, vietnamese)"
 msgid "no-subset"
 msgstr "cyrillic"
@@ -178,7 +193,7 @@ msgstr "cyrillic"
 #. Translators: If there are characters in your language that are not supported
 #. by Inconsolata, translate this to 'off'. Do not translate into your own
 #. language.
-#: functions.php:191
+#: functions.php:177
 msgctxt "Inconsolata font: on or off"
 msgid "on"
 msgstr "on"
@@ -186,7 +201,7 @@ msgstr "on"
 #. Translators: If there are characters in your language that are not supported
 #. by Noto Serif, translate this to 'off'. Do not translate into your own
 #. language.
-#: functions.php:183
+#: functions.php:169
 msgctxt "Noto Serif font: on or off"
 msgid "on"
 msgstr "on"
@@ -194,18 +209,18 @@ msgstr "on"
 #. Translators: If there are characters in your language that are not supported
 #. by Noto Sans, translate this to 'off'. Do not translate into your own
 #. language.
-#: functions.php:175
+#: functions.php:161
 msgctxt "Noto Sans font: on or off"
 msgid "on"
 msgstr "on"
 
-#: functions.php:149
-msgid "Add widgets here to appear in your sidebar."
-msgstr "Добавьте сюда виджеты, которые вы хотите разместить в боковой колонке."
-
-#: functions.php:147
+#: functions.php:133
 msgid "Widget Area"
 msgstr "Область для виджетов"
+
+#: functions.php:135
+msgid "Add widgets here to appear in your sidebar."
+msgstr "Добавьте сюда виджеты, которые вы хотите разместить в боковой колонке."
 
 #: functions.php:86
 msgid "Social Links Menu"
@@ -219,11 +234,11 @@ msgstr "Основное меню"
 msgid "Proudly powered by %s"
 msgstr "Сайт работает на %s"
 
-#. #-#-#-#-#  twentyfifteen.pot (Twenty Fifteen 1.5)  #-#-#-#-#
+#. #-#-#-#-#  twentyfifteen.pot (Twenty Fifteen 1.2)  #-#-#-#-#
 #. Author URI of the plugin/theme
 #: footer.php:25
 msgid "https://wordpress.org/"
-msgstr "https://ru.wordpress.org/"
+msgstr "https://wordpress.org/"
 
 #: content-none.php:31
 msgid "It seems we can&rsquo;t find what you&rsquo;re looking for. Perhaps searching can help."
@@ -239,7 +254,7 @@ msgstr "Готовы опубликовать свою первую запись
 
 #: content-none.php:15
 msgid "Nothing Found"
-msgstr "Ничего не найдено"
+msgstr "Не найдено"
 
 #: content-link.php:56 content-page.php:35 content-search.php:28
 #: content-search.php:33 content.php:57 image.php:71
@@ -248,16 +263,16 @@ msgstr "Изменить"
 
 #: content-link.php:36 content-page.php:25 content.php:38 image.php:59
 msgid "Pages:"
-msgstr "Страниц:"
+msgstr "Страницы:"
 
 #. translators: %s: Name of current post
-#: content-link.php:31 content.php:33 inc/template-tags.php:238
+#: content-link.php:31 content.php:33 inc/template-tags.php:237
 msgid "Continue reading %s"
 msgstr "Читать далее %s"
 
 #: comments.php:53
 msgid "Comments are closed."
-msgstr "Обсуждение закрыто."
+msgstr "Комментарии запрещены."
 
 #: comments.php:28
 msgctxt "comments title"
@@ -295,11 +310,3 @@ msgstr "По данному адресу ничего не найдено. По�
 #: 404.php:17
 msgid "Oops! That page can&rsquo;t be found."
 msgstr "Ой! Страница не найдена."
-
-#. Author of the plugin/theme
-msgid "the WordPress team"
-msgstr "Команда WordPress"
-
-#. Theme URI of the plugin/theme
-msgid "https://wordpress.org/themes/twentyfifteen/"
-msgstr "https://wordpress.org/themes/twentyfifteen/"
