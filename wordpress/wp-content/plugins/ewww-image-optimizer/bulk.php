@@ -139,22 +139,51 @@ function ewww_image_optimizer_count_optimized( $gallery, $return_ids = false ) {
 			// retrieve all the image attachment metadata from the database
 			while ( $attachments = $wpdb->get_results( "SELECT metas.meta_value,post_id FROM $wpdb->postmeta metas INNER JOIN $wpdb->posts posts ON posts.ID = metas.post_id WHERE (posts.post_mime_type LIKE '%%image%%' OR posts.post_mime_type LIKE '%%pdf%%') AND metas.meta_key = '_wp_attachment_metadata' $attachment_query LIMIT $offset,$max_query", ARRAY_N ) ) {
 				ewwwio_debug_message( "fetched " . count( $attachments ) . " attachments starting at $offset" );
-				$disabled_sizes = ewww_image_optimizer_get_option( 'ewww_image_optimizer_disable_resizes' );
+				$disabled_sizes = ewww_image_optimizer_get_option( 'ewww_image_optimizer_disable_resizes_opt' );
 				foreach ( $attachments as $attachment ) {
+//					ewwwio_debug_message( 'checking attachment ' . $attachment[1] );
 					$meta = maybe_unserialize( $attachment[0] );
 					if ( empty( $meta ) ) {
+						ewwwio_debug_message( 'empty meta' );
+						continue;
+					}
+					$mime = '';
+					if ( ! empty( $meta['file'] ) ) {
+						$mime = ewww_image_optimizer_quick_mimetype( $meta['file'] );
+					} elseif ( ! empty( $attachment[1] ) ) {
+						$mime = get_post_mime_type( $attachment[1] );
+						ewwwio_debug_message( 'checking mime via get_post...' );
+					}
+					if ( $mime == 'image/jpeg' && ewww_image_optimizer_get_option( 'ewww_image_optimizer_jpg_level' ) == 0 ) {
+//						ewwwio_debug_message( 'optimization for this type disabled, skipping' );
+						continue;
+					}
+					if ( $mime == 'image/png' && ewww_image_optimizer_get_option( 'ewww_image_optimizer_png_level' ) == 0 ) {
+//						ewwwio_debug_message( 'optimization for this type disabled, skipping' );
+						continue;
+					}
+					if ( $mime == 'image/gif' && ewww_image_optimizer_get_option( 'ewww_image_optimizer_gif_level' ) == 0 ) {
+//						ewwwio_debug_message( 'optimization for this type disabled, skipping' );
+						continue;
+					}
+					if ( $mime == 'application/pdf' && ewww_image_optimizer_get_option( 'ewww_image_optimizer_pdf_level' ) == 0 ) {
+//						ewwwio_debug_message( 'optimization for this type disabled, skipping' );
 						continue;
 					}
 					if ( empty( $meta['ewww_image_optimizer'] ) ) {
+//						ewwwio_debug_message( 'no optimization status, counting as unoptimized full: ' . $attachment[1] );
+//						ewwwio_debug_message( print_r( $meta, true ) );
 						$unoptimized_full++;
 						$ids[] = $attachment[1];
 					}
 					if ( ! empty( $meta['ewww_image_optimizer'] ) && preg_match( '/' . __('License exceeded', EWWW_IMAGE_OPTIMIZER_DOMAIN) . '/', $meta['ewww_image_optimizer'] ) ) {
+//						ewwwio_debug_message( 'optimization status license exceeded, counting as unoptimized full: ' . $attachment[1] );
+//						ewwwio_debug_message( print_r( $meta, true ) );
 						$unoptimized_full++;
 						$ids[] = $attachment[1];
 					}
 					// resized versions, so we can continue
-					if ( isset( $meta['sizes'] ) ) {
+					if ( isset( $meta['sizes'] ) && is_array( $meta['sizes'] ) ) {
 						foreach( $meta['sizes'] as $size => $data ) {
 							if ( ! empty( $disabled_sizes[ $size ] ) ) {
 								continue;
@@ -472,7 +501,7 @@ function ewww_image_optimizer_bulk_loop() {
 	session_write_close();
 	// retrieve the time when the optimizer starts
 	$started = microtime( true );
-	if ( ini_get( 'max_execution_time' ) ) {
+	if ( ewww_image_optimizer_stl_check() && ini_get( 'max_execution_time' ) ) {
 		set_time_limit( 0 );
 	}
 	// find out if our nonce is on it's last leg/tick

@@ -6,6 +6,37 @@ if ( ! defined( 'ABSPATH' ) ) {
 require_once( EWWW_IMAGE_OPTIMIZER_PLUGIN_PATH . 'classes/wp-async-request.php' );
 require_once( EWWW_IMAGE_OPTIMIZER_PLUGIN_PATH . 'classes/wp-background-process.php' );
 
+class EWWWIO_Test_Background_Process extends WP_Background_Process {
+
+	protected $action = 'ewwwio_test_optimize';
+
+	protected function task( $item ) {
+		session_write_close();
+		ewwwio_debug_message( "testing background processing, received $item" );
+		if ( ewww_image_optimizer_detect_wpsf_location_lock() ) {
+			ewwwio_debug_message( 'detected location lock, not enabling background opt' );
+			ewww_image_optimizer_debug_log();
+			return false;
+		}
+		if ( $item != '949c34123cf2a4e4ce2f985135830df4a1b2adc24905f53d2fd3f5df5b162932' ) {
+			ewwwio_debug_message( 'wrong item received, not enabling background opt' );
+			ewww_image_optimizer_debug_log();
+			return false;
+		}
+		ewww_image_optimizer_set_option( 'ewww_image_optimizer_background_optimization', true );
+		ewww_image_optimizer_debug_log();
+		return false;
+	}
+
+	protected function complete() {
+		parent::complete();
+	}
+
+}
+
+global $ewwwio_test_background;
+$ewwwio_test_background = new EWWWIO_Test_Background_Process();
+
 class EWWWIO_Media_Background_Process extends WP_Background_Process {
 
 	protected $action = 'ewwwio_media_optimize';
@@ -40,7 +71,7 @@ class EWWWIO_Media_Background_Process extends WP_Background_Process {
 			return false;
 		}
 		$meta = ewww_image_optimizer_resize_from_meta_data( $meta, $id, true, $item['new'] );
-		if ( $meta == 'processing' ) {
+		if ( ! empty( $meta['processing'] ) ) {
 			$item['attempts']++;
 			ewwwio_debug_message( "image not finished, try again" );
 			ewww_image_optimizer_debug_log();
@@ -58,6 +89,7 @@ class EWWWIO_Media_Background_Process extends WP_Background_Process {
 	}
 }
 
+global $ewwwio_media_background;
 $ewwwio_media_background = new EWWWIO_Media_Background_Process();
 
 class EWWWIO_Image_Background_Process extends WP_Background_Process {
@@ -79,6 +111,7 @@ class EWWWIO_Image_Background_Process extends WP_Background_Process {
 	}
 }
 
+global $ewwwio_image_background;
 $ewwwio_image_background = new EWWWIO_Image_Background_Process();
 
 class EWWWIO_Flag_Background_Process extends WP_Background_Process {
@@ -124,6 +157,7 @@ class EWWWIO_Flag_Background_Process extends WP_Background_Process {
 	}
 }
 
+global $ewwwio_flag_background;
 $ewwwio_flag_background = new EWWWIO_Flag_Background_Process();
 
 class EWWWIO_Ngg_Background_Process extends WP_Background_Process {
@@ -169,6 +203,7 @@ class EWWWIO_Ngg_Background_Process extends WP_Background_Process {
 	}
 }
 
+global $ewwwio_ngg_background;
 $ewwwio_ngg_background = new EWWWIO_Ngg_Background_Process();
 
 class EWWWIO_Ngg2_Background_Process extends WP_Background_Process {
@@ -215,6 +250,7 @@ class EWWWIO_Ngg2_Background_Process extends WP_Background_Process {
 	}
 }
 
+global $ewwwio_ngg2_background;
 $ewwwio_ngg2_background = new EWWWIO_Ngg2_Background_Process();
 
 class EWWWIO_Async_Request extends WP_Async_Request {
@@ -229,17 +265,26 @@ class EWWWIO_Async_Request extends WP_Async_Request {
 			$size = $_POST['ewwwio_size'];
 		}
 		if ( ! empty( $_POST['ewwwio_path'] ) && $size == 'full' ) {
-			$file_path = ABSPATH . $_POST['ewwwio_path'];
-			ewwwio_debug_message( 'processing async optimization request' );
-			list( $file, $msg, $conv, $original ) = ewww_image_optimizer( $file_path, 1, false, false, true );
+			$file_path = $this->find_file( $_POST['ewwwio_path'] );
+			if ( ! empty( $file_path ) ) {
+				ewwwio_debug_message( 'processing async optimization request' );
+				list( $file, $msg, $conv, $original ) = ewww_image_optimizer( $file_path, 1, false, false, true );
+			} else {
+				ewwwio_debug_message( "could not process async optimization request for {$_POST['ewwwio_path']}" );
+			}
 		} elseif ( ! empty( $_POST['ewwwio_path'] ) ) {
-			$file_path = ABSPATH . $_POST['ewwwio_path'];
-			ewwwio_debug_message( 'processing async optimization request' );
-			list( $file, $msg, $conv, $original ) = ewww_image_optimizer( $file_path );
+			$file_path = $this->find_file( $_POST['ewwwio_path'] );
+			if ( ! empty( $file_path ) ) {
+				ewwwio_debug_message( 'processing async optimization request' );
+				list( $file, $msg, $conv, $original ) = ewww_image_optimizer( $file_path );
+			} else {
+				ewwwio_debug_message( "could not process async optimization request for {$_POST['ewwwio_path']}" );
+			}
 		} else {
 			ewwwio_debug_message( 'ignored async optimization request' );
 			return;
 		}
+		ewww_image_optimizer_hidpi_optimize( $file_path );
 		ewwwio_debug_message( 'checking for: ' . $file_path . '.processing' );
 		if ( is_file( $file_path . '.processing' ) ) {
 			ewwwio_debug_message( 'removing ' . $file_path . '.processing' );
@@ -247,8 +292,34 @@ class EWWWIO_Async_Request extends WP_Async_Request {
 		}
 		ewww_image_optimizer_debug_log();
 	}
+	
+	public function find_file( $file_path ) {
+		if ( is_file( $file_path ) ) {
+			return $file_path;
+		}
+		// retrieve the location of the wordpress upload folder
+		$upload_dir = wp_upload_dir();
+		// retrieve the path of the upload folder
+		$upload_path = trailingslashit( $upload_dir['basedir'] );
+		$file = $upload_path . $file_path;
+		if ( is_file( $file ) ) {
+			return $file;
+		}
+		$upload_path = trailingslashit( WP_CONTENT_DIR );
+		$file = $upload_path . $file_path;
+		if ( is_file( $file ) ) {
+			return $file;
+		}
+		$upload_path .= 'uploads/';
+		$file = $upload_path . $file_path;
+		if ( is_file( $file ) ) {
+			return $file;
+		}
+		return '';
+	}
 }
 
+global $ewwwio_async_optimize_media;
 $ewwwio_async_optimize_media = new EWWWIO_Async_Request();
 
 class EWWWIO_Async_Key_Verification extends WP_Async_Request {
@@ -262,4 +333,5 @@ class EWWWIO_Async_Key_Verification extends WP_Async_Request {
 	}
 }
 
+global $ewwwio_async_key_verification;
 $ewwwio_async_key_verification = new EWWWIO_Async_Key_Verification();
