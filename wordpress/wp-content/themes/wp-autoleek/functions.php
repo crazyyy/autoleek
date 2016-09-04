@@ -201,7 +201,7 @@ function wpeExcerpt10($length) {
   return 10;
 }
 function wpeExcerpt20($length) {
-  return 20;
+  return 16;
 }
 function wpeExcerpt40($length) {
   return 40;
@@ -225,13 +225,13 @@ function wpeExcerpt($length_callback = '', $more_callback = '') {
 
 //  Custom View Article link to Post
 //  RU: Добавляем "Читать дальше" к обрезанным записям
-/*
+
 function html5_blank_view_article($more) {
   global $post;
-  return '... <!-- noindex --><a rel="nofollow" class="view-article" href="' . get_permalink($post->ID) . '">' . __('View Article', 'wpeasy') . '</a><!-- /noindex -->';
+  return '... <!-- noindex --><a rel="nofollow" class="view-article" href="' . get_permalink($post->ID) . '">Читать далее</a><!-- /noindex -->';
 }
 add_filter('excerpt_more', 'html5_blank_view_article'); // Add 'View Article' button instead of [...] for Excerpts
-*/
+
 // Remove the <div> surrounding the dynamic navigation to cleanup markup
 add_filter('wp_nav_menu_args', 'my_wp_nav_menu_args'); // Remove surrounding <div> from WP Navigation
 function my_wp_nav_menu_args($args = '') {
@@ -280,7 +280,9 @@ function html5wp_pagination() {
     'base' => str_replace($big, '%#%', get_pagenum_link($big)),
     'format' => '?paged=%#%',
     'current' => max(1, get_query_var('paged')),
-    'total' => $wp_query->max_num_pages
+    'total' => $wp_query->max_num_pages,
+    'prev_text'          => '«',
+  'next_text'          => '»',
   ));
 }
 
