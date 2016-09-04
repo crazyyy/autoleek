@@ -36,7 +36,14 @@
         </nav><!-- /nav -->
 
         <div class="searcher col-md-1">
-          <button class="btn-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+          <div class="search-from-container">
+            <button class="btn-fake-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+            <form method="get" name="searchform" action="<?php bloginfo('url'); ?>/">
+              <input type="text" value="" name="s" placeholder="Поиск" />
+              <button class="btn-search"><i class="fa fa-search" aria-hidden="true"></i></button>
+              <span class="btn-close"><i class="fa fa-times" aria-hidden="true"></i></span>
+            </form>
+          </div><!-- /.search-from-container -->
         </div><!-- /.searcher col-md-1 -->
 
       </div><!-- /.row -->

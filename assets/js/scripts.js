@@ -3179,13 +3179,59 @@ $(document).ready(function() {
   $(".home-carousel").owlCarousel({
     loop: true,
     items: 1,
-    nav:true,
-    navText: ["<",">"]
+    nav: true,
+    navText: ["<", ">"]
   });
   $('.widget').each(function(index, el) {
     var searchAD = $(this).children('div').find('.adsbygoogle');
-    if ( searchAD.length > 0 ) {
+    if (searchAD.length > 0) {
       $(this).addClass('widget-transparent')
     }
   });
+  $('.searcher .btn-fake-search').on('click', function(event) {
+    event.preventDefault();
+    $('.searcher form').fadeIn('fast');
+  })
+  $('.searcher .btn-close').on('click', function(event) {
+    event.preventDefault();
+    $('.searcher form').fadeOut('fast');
+  })
+
+  $('form .btn-clear').on('click', function() {
+    var $element = $(this).parent('form').children('input');
+    $element.val('');
+    $element.attr('placeholder', 'Поиск...');
+  })
+
+  $('#nav_menu-2 li').each(function(index, el) {
+    if ($(this).children('ul').length > 0) {
+      $(this).addClass('nav-first-level');
+      $(this).addClass('nav-closed');
+    }
+  });
+
+  $('.nav-closed').on('click', function(event) {
+    // event.preventDefault();
+    $(this).removeClass('nav-closed');
+    $(this).addClass('nav-opened');
+  })
+  $('.nav-opened').click(function(event) {
+    console.log('sasa');
+    return true;
+  })
+
+
 });
+(function() {
+  var $elements = $('.looper');
+  var $elementsChild = $('.looper .feature-img');
+  var maxheight = 0;
+  $elements.each(function() {
+    if ($(this).height() > maxheight) {
+      maxheight = $(this).height();
+    }
+  });
+  $elements.height(maxheight);
+  var css = maxheight - 10 + 'px';
+  $elementsChild.css('max-height', css);
+}());

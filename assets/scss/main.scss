@@ -28,6 +28,13 @@ body {
   background-color: $base-background-color;
 
   -webkit-font-smoothing: antialiased;
+  &.page-template-page-sitemap {
+    section {
+      background-image: url(../img/bg/article-sitemap.png);
+      background-repeat: no-repeat;
+      background-position: right 50px;
+    }
+  }
 }
 h1,
 h2,
@@ -107,18 +114,89 @@ header {
   }
   .searcher {
     padding-top: 50px;
-    .btn-search {
+    .search-from-container {
+      position: relative;
+
       width: 50px;
       height: 50px;
+      .btn-fake-search {
+        position: absolute;
+        z-index: 0;
+        top: 0;
+        left: 0;
 
-      text-align: center;
+        width: 50px;
+        height: 50px;
 
-      border-radius: 50%;
-      background-color: #fff;
+        text-align: center;
+
+        border-radius: 50%;
+        background-color: #fff;
+      }
       .fa {
         font-size: 22px;
 
         color: #646464;
+      }
+    }
+    form {
+      position: absolute;
+      top: 0;
+      right: 0;
+
+      display: none;
+
+      width: 450px;
+      height: 50px;
+
+      border-radius: 25px;
+      input {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        height: 100%;
+
+        border-radius: 25px 0 0 25px;
+        box-shadow: none;
+        &:focus {
+          border-color: #fff;
+          box-shadow: none;
+        }
+      }
+      span {
+        line-height: 3.4;
+
+        display: block;
+
+        padding-right: 5px;
+
+        cursor: pointer;
+        text-align: center;
+      }
+      button,
+      span {
+        position: absolute;
+        top: 1px;
+        bottom: 1px;
+
+        width: 50px;
+
+        color: #000;
+        background-color: #fff;
+      }
+      .btn-search {
+        right: 0;
+
+        border-right: 1px solid #000;
+        border-radius: 0;
+      }
+      .btn-close {
+        right: -50px;
+
+        border-radius: 0 50% 50% 0;
       }
     }
   }
@@ -356,8 +434,9 @@ nav {
     li {
       strong {
         display: block;
-
-        margin-bottom: 10px;
+      }
+      .pollbar {
+        margin-top: 10px;
       }
     }
   }
@@ -697,6 +776,192 @@ article {
       }
     }
   }
+  &.article-sitemap {
+    .sitemap-title {
+      font-size: 32px;
+      font-weight: bold;
+      line-height: 3;
+
+      width: 100%;
+      height: 100px;
+      margin-bottom: 30px;
+
+      text-align: center;
+
+      color: #fff;
+      background-image: url(../img/bg/sitemap-title.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    h2 {
+      font-size: 27px;
+
+      margin-bottom: 20px;
+      padding-bottom: 5px;
+
+      color: $blue;
+      border-bottom: 1px solid $blue;
+    }
+    ul {
+      font-size: 16px;
+
+      padding-left: 30px;
+      > li {
+        position: relative;
+        &:before {
+          position: absolute;
+          top: 5px;
+          left: -20px;
+
+          width: 8px;
+          height: 8px;
+
+          border: 2px solid $blue;
+          border-radius: 50%;
+          background-color: $blue;
+
+          @extend .dblock;
+        }
+      }
+      strong + a {
+        font-weight: bold;
+      }
+      li {
+        margin-bottom: 15px;
+        a {
+          &:hover {
+            text-decoration: none;
+
+            color: $green;
+          }
+        }
+        ul {
+          padding-top: 15px;
+          strong + a {
+            font-weight: normal;
+          }
+          li {
+            &:before {
+              top: 6px;
+
+              background-color: #fff;
+            }
+          }
+          ul {
+            &:before {
+              display: none;
+            }
+            li {
+              position: relative;
+              &:before {
+                position: absolute;
+                top: 5px;
+                left: -20px;
+
+                width: 8px;
+                height: 8px;
+
+                border: 1px solid $blue;
+                border-radius: 50%;
+                background-color: #fff;
+
+                @extend .dblock;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+  &.article-searchresult {
+    .search-title {
+      font-size: 27px;
+      line-height: 3;
+
+      height: 100px;
+      margin-bottom: 40px;
+
+      text-align: center;
+
+      color: #fff;
+      background-image: url(../img/bg/search-title.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+    }
+    .searchresult-form {
+      position: relative;
+
+      width: 100%;
+      height: 40px;
+      margin-bottom: 30px;
+
+      border-radius: 25px;
+      input {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        height: 40px;
+        padding-left: 15px;
+
+        border: 1px solid $blue;
+        border-radius: 25px;
+      }
+      button {
+        font-size: 18px;
+        line-height: .8;
+
+        position: absolute;
+        z-index: 1;
+        top: 0;
+        right: 0;
+        bottom: 0;
+
+        width: 100px;
+        height: 40px;
+
+        text-align: center;
+        text-transform: uppercase;
+
+        color: #fff;
+        border-radius: 0 25px 25px 0;
+        background-color: $green;
+        &:hover {
+          background-color: $blue;
+        }
+      }
+      .btn-clear {
+        font-size: 30px;
+        line-height: 1.2;
+
+        position: absolute;
+        z-index: 1;
+        right: 100px;
+
+        width: 40px;
+        height: 40px;
+
+        cursor: pointer;
+        text-align: center;
+
+        color: gray;
+        background-color: transparent;
+        &:hover {
+          color: #000;
+        }
+      }
+    }
+    .search-result-count {
+      margin-bottom: 20px;
+    }
+    .relative-posts {
+      padding-top: 10px;
+    }
+  }
 }
 .breadcrumbs {
   font-size: 80%;
@@ -710,6 +975,7 @@ article {
 
   @extend .clearfix;
   p {
+    margin-bottom: 0;
     margin-left: 195px;
   }
   .view-article {
@@ -736,10 +1002,10 @@ article {
   }
   .feature-img {
     float: left;
-
+overflow: hidden;
     width: 170px;
     min-height: 110px;
-    margin: 0 25px 20px 0;
+    margin: 0 25px 0 0;
   }
   h2 {
     font-size: 27px;
@@ -814,15 +1080,80 @@ aside {
       }
     }
     &#nav_menu-2 {
+      padding-bottom: 0;
       ul {
+        margin-right: -30px;
+        margin-left: -30px;
+        padding-right: 30px;
+        padding-left: 30px;
         li {
           font-size: 18px;
 
-          margin: 0 0 20px;
+          margin: 0 0 10px;
+          &.nav-first-level {
+            margin-bottom: 10px;
+            padding-top: 0;
+            padding-bottom: 15px;
+          }
+          &.nav-closed {
+            .sub-menu {
+              display: none;
+            }
+          }
+          &.current-menu-item,
+          &.current-menu-ancestor {
+            .sub-menu {
+              display: block;
+            }
+          }
           a {
             text-decoration: none;
 
             color: #0a67ac;
+          }
+        }
+        .sub-menu {
+          margin-top: 10px;
+          padding-top: 5px;
+          padding-bottom: 1px;
+          padding-left: 60px;
+
+          background-color: #fff;
+          li {
+            font-size: 14px;
+
+            position: relative;
+            &:before {
+              position: absolute;
+              top: 3px;
+              left: -15px;
+
+              @extend .dblock;
+              @include triangle(10px, $blue, right);
+            }
+            &:after {
+              position: absolute;
+              z-index: 0;
+              top: -5px;
+              right: -30px;
+              bottom: -5px;
+              left: -60px;
+
+              display: none;
+
+              background-color: rgba(0, 182, 104, .5);
+            }
+            &:hover {
+              &:after {
+                @extend .dblock;
+              }
+              a {
+                position: relative;
+                z-index: 1;
+
+                color: $blue;
+              }
+            }
           }
         }
       }
