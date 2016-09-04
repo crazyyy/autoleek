@@ -242,6 +242,7 @@ nav {
       border-radius: $base-border-radius;
       background-color: #fff;
       &:hover {
+        background-color: #17e88d;
         text-decoration: none;
       }
     }
@@ -360,16 +361,18 @@ nav {
 
     margin-bottom: 10px;
     padding-bottom: 5px;
-&:after {
-height: 2px;
-position: absolute;
-right: 15px;
-left: 15px;
-bottom: 0;
-@extend .dblock;
-background-color: $blue;
-}
+    &:after {
+      position: absolute;
+      right: 15px;
+      bottom: 0;
+      left: 15px;
 
+      height: 2px;
+
+      background-color: $blue;
+
+      @extend .dblock;
+    }
   }
   .populars-item {
     overflow: hidden;
