@@ -672,6 +672,31 @@ article {
       }
     }
   }
+  &.error-page {
+    padding-top: 450px;
+
+    background-image: url(../img/bg/page-404.png);
+    background-repeat: no-repeat;
+    background-position: center top;
+    .error-title {
+      font-size: 32px;
+
+      margin-bottom: 35px;
+
+      text-align: center;
+    }
+    .error-container {
+      p {
+        line-height: 2;
+
+        padding-right: 20px;
+        padding-left: 20px;
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+  }
 }
 .breadcrumbs {
   font-size: 80%;
@@ -689,6 +714,7 @@ article {
   }
   .view-article {
     text-decoration: underline;
+
     color: $blue;
     &:hover {
       color: $green;
