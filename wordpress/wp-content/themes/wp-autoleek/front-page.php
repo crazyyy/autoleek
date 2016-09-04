@@ -29,12 +29,31 @@
         </form>
       </div><!-- /.subscribe-block -->
 
+      <div class="pools-block">
+        <?php if (function_exists('vote_poll') && !in_pollarchive()): ?>
+          <ul>
+            <li><?php get_poll();?></li>
+          </ul>
+        <?php endif; ?>
+      </div><!-- /.pools-block -->
 
-
-      <h1 class="page-title inner-title"><?php the_title(); ?></h1>
-      <?php the_content(); ?>
-      <?php edit_post_link(); ?>
-
+      <div class="populars-block">
+        <div class="row">
+          <h6 class="populars-title col-md-12">Популярные статьи</h6>
+          <?php query_posts("showposts=6"); ?>
+            <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+              <div class="populars-item col-md-4">
+                <a href="<?php the_permalink(); ?>">
+                  <?php  if ( has_post_thumbnail()) { the_post_thumbnail('small'); } else { ?>
+                    <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
+                  <?php } ?>
+                  <h3><?php the_title(); ?></h3>
+                </a>
+              </div><!-- populars-item -->
+            <?php endwhile; endif; ?>
+          <?php wp_reset_query(); ?>
+        </div>
+      </div><!-- /.populars-block -->
     </article>
   <?php endwhile; endif; ?>
 <?php get_sidebar(); ?>
