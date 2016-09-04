@@ -23,13 +23,14 @@ $heading-line-height: 1.2;
 $width: 1248px;
 $footer: 150px;
 $footer_margin: $footer - 2 * $footer;
-$base-border-radius: 3px;
+$base-border-radius: 5px;
 $base-spacing: $base-line-height * 1em;
 $small-spacing: $base-spacing / 2;
 $base-z-index: 0;
 
 // Colors
 $orange: orange;
+$green: #00b668;
 $red: red;
 $blue: #034170;
 $gray-medium: #999;

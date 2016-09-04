@@ -12,6 +12,8 @@
 
 @import 'super_sprite';
 
+@import 'owl.carousel';
+
 body {
   font-family: $base-font-family;
   font-size: $base-font-size;
@@ -147,7 +149,156 @@ nav {
     }
   }
 }
+.home-carousel {
+  height: 370px;
+  margin-bottom: 25px;
+  .owl-controls {
+    position: absolute;
+    top: 50%;
 
+    width: 100%;
+    height: 30px;
+    .owl-nav {
+      position: relative;
+
+      width: 100%;
+      height: 100%;
+      .owl-prev,
+      .owl-next {
+        font-size: 20px;
+        font-weight: bold;
+
+        position: absolute;
+        top: 0;
+        bottom: 0;
+
+        width: 30px;
+        height: 30px;
+        padding-top: 3px;
+
+        text-align: center;
+
+        opacity: .7;
+        color: $blue;
+        border-radius: 2px;
+        background-color: #fff;
+        &:hover {
+          opacity: 1;
+        }
+      }
+      .owl-prev {
+        left: 60px;
+      }
+      .owl-next {
+        right: 60px;
+      }
+    }
+  }
+  .owl-item {
+    position: relative;
+
+    height: 370px;
+    > div {
+      height: 100%;
+    }
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: 100%;
+    }
+    h6 {
+      font-size: 24px;
+      line-height: 26px;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 50%;
+
+      width: 50%;
+      padding-top: 70px;
+      padding-right: 50%;
+
+      color: #fff;
+    }
+    .know-more {
+      font-size: 17px;
+      font-weight: bold;
+
+      position: absolute;
+      top: 70%;
+      left: 50%;
+
+      display: block;
+
+      width: 180px;
+      height: 40px;
+      padding-top: 10px;
+
+      text-align: center;
+      text-decoration: none;
+
+      color: #000;
+      border-radius: $base-border-radius;
+      background-color: #fff;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+}
+.subscribe-block {
+  h6 {
+    font-size: 22px;
+
+    padding-bottom: 90px;
+
+    text-align: center;
+
+    color: #000;
+    background-image: url(../img/bg/subscribe-block.png);
+    background-repeat: no-repeat;
+    background-position: center bottom;
+    span {
+      font-size: 14px;
+      font-style: italic;
+
+      display: block;
+    }
+  }
+  form {
+    position: relative;
+
+    width: 70%;
+    height: 50px;
+    margin: 0 auto 50px;
+
+    border: 3px solid $green;
+    border-radius: 4px;
+    input {
+      width: 100%;
+      height: 100%;
+
+      border-radius: 4px;
+    }
+    button {
+      font-size: 20px;
+      font-weight: bold;
+
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+
+      width: 150px;
+      padding-top: 7px;
+
+      color: #fff;
+      border-radius: 0 4px 4px 0;
+      background-color: $green;
+    }
+  }
+}
 section {
   padding: 40px 0 $footer;
 }
@@ -196,6 +347,9 @@ aside {
           }
         }
       }
+    }
+    &.widget-transparent {
+      background-color: transparent;
     }
   }
 }
@@ -283,9 +437,9 @@ footer {
         text-align: center;
 
         color: #fff;
-        background-color: #00b668;
+        background-color: $green;
         &:hover {
-          background-color: darken(#00b668, 10%);
+          background-color: darken($green, 10%);
         }
       }
     }
