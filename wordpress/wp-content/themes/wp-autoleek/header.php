@@ -28,7 +28,14 @@
       <div class="row">
 
         <div class="logo col-md-4">
-          <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="" title="">
+          <?php if ( is_front_page() && is_home() ){ } else { ?>
+            <a href="<?php echo home_url(); ?>">
+              <?php  } ?>
+              <img src="<?php echo get_template_directory_uri(); ?>/img/logo.png" alt="<?php wp_title( '' ); ?>" title="<?php wp_title( '' ); ?>" class="logo-img">
+              <?php if ( is_front_page() && is_home() ){
+              } else { ?>
+            </a>
+          <?php } ?>
         </div><!-- /logo -->
 
         <nav class="nav__header col-md-4 col-md-offset-3" role="navigation">

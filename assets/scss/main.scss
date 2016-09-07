@@ -495,12 +495,12 @@ nav {
         padding: 7px;
 
         color: #fff;
-        background-color: rgba(3, 65, 112, .5);
+        background-color: $blueop;
         &:after {
           display: none;
         }
         &:hover {
-          background-color: rgba(0, 182, 104, .5);
+          background-color: $greenop;
         }
       }
     }
@@ -516,6 +516,14 @@ article {
   @extend .clearfix;
   &.post {
     margin-bottom: 40px;
+    a {
+      color: $blue;
+      &:hover {
+        text-decoration: none;
+
+        color: $green;
+      }
+    }
     h1,
     h2,
     h3, {
@@ -663,6 +671,8 @@ article {
       }
     }
     table {
+      width: 85%;
+      margin: 0 auto 20px;
       th,
       td {
         padding: 7px;
@@ -963,6 +973,9 @@ article {
     }
   }
 }
+.cat-description {
+  margin-bottom: 30px;
+}
 .breadcrumbs {
   font-size: 80%;
 
@@ -1002,7 +1015,8 @@ article {
   }
   .feature-img {
     float: left;
-overflow: hidden;
+    overflow: hidden;
+
     width: 170px;
     min-height: 110px;
     margin: 0 25px 0 0;
@@ -1015,6 +1029,30 @@ overflow: hidden;
       text-decoration: none;
 
       color: #000;
+    }
+  }
+}
+.wp-caption {
+  position: relative;
+
+  max-width: 96%;
+  padding: 0;
+
+  text-align: center;
+  .wp-caption-text {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    padding: 10px;
+
+    color: #fff;
+    background-color: $blueop;
+  }
+  &:hover {
+    .wp-caption-text {
+      background-color: $greenop;
     }
   }
 }
@@ -1141,7 +1179,7 @@ aside {
 
               display: none;
 
-              background-color: rgba(0, 182, 104, .5);
+              background-color: $greenop;
             }
             &:hover {
               &:after {

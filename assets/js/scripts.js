@@ -3235,3 +3235,7 @@ $(document).ready(function() {
   var css = maxheight - 10 + 'px';
   $elementsChild.css('max-height', css);
 }());
+
+function goBack() {
+  window.history.back();
+}
