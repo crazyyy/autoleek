@@ -37,16 +37,22 @@ https://monosnap.com/file/VbtdBaE7jJkEMA7wremVEZKLZ4fcxu.png
 //--
 
 https://monosnap.com/file/10rN3DYcBsUuybo8xhbCjzt2OEvnzY.png
+//++
 
 https://monosnap.com/file/QNgtn5JH2umIlHiWR9y7nPzHs9qTJo.png
+//++
 
 https://monosnap.com/file/s2FxZaVK9q2H8KPCBtWugQcFd7WUAJ.png
+// он и не будет на одном месте - длина слов разная же
 
 https://monosnap.com/file/QvOfQ3yf5MWRYxWfeLv4GbdtbOEKop.png
+//++
 
 https://monosnap.com/file/tri7o7b6KXp2CnbEa8wCMaHtSGvKi9.png
+// текст - название рубрики, картинка в редактировании рубрики будет
 
 https://monosnap.com/file/jint14rHy4QjuHRup3H7lGfkFJe2z3.png
+//
 
 https://monosnap.com/file/TA7U7wFAKFxkKnwA1Z8MlpZv9nwF7t.png
 

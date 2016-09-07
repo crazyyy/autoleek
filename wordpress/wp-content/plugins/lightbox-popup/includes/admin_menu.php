@@ -372,7 +372,7 @@ class wpdevart_lightbox_admin_menu{
 					</tr>
                     <tr>
 						<td>
-							Popup distance from window <span title="Type Popup distance from window when position is 1,2,3,4,6,7,8,9(except Middle center position)" class="desription_class">?</span>
+							Popup distance from window <span title="Type Popup distance from window when position is 1,2,3,4,6,7,8,9(except Middle center position - 5)" class="desription_class">?</span>
 						</td>
 						<td>
 							<input type="number"  id="popup_outside_margin" name="popup_outside_margin"  min="0"  step="1"  value="<?php echo $page_parametrs['popup_outside_margin'] ?>"/><small>Px</small>					

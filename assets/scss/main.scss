@@ -262,12 +262,13 @@ nav {
 
         text-align: center;
 
-        opacity: .7;
+
         color: $blue;
         border-radius: 2px;
         background-color: #fff;
         &:hover {
-          opacity: 1;
+
+          background-color: $blueother;
         }
       }
       .owl-prev {
@@ -328,7 +329,7 @@ nav {
       &:hover {
         text-decoration: none;
 
-        background-color: #17e88d;
+        background-color: $blueother;
       }
     }
   }

@@ -4,7 +4,7 @@ Donate link: http://wpdevart.com/wordpress-lightbox-plugin
 Tags: lightbox, lightbox popup, light box, lightbox gallery, Photoswipe, popup lightbox, lightbox photo, image lightbox, gallery lightbox, video lightbox, Nivo Lightbox, lightbox image, wordpress image lightbox, lightbox message, lightbox message, exit lightbox, Lightbox slider, prettyphoto lightbox, responsive lightbox, wordpress video gallery lightbox, lightbox youtube, photo lightbox, flickr lightbox gallery, WP Lightbox, wordpress lightbox, lightbox effect, Jquery lightbox, style lightbox, wordpress slideshow lightbox, css3 lightbox, lightview, popup box, swipe, popup, popup window, wordpress popup, Responsive Popup, optin popup, popups, exit popup, popup box, full screen popup, bing           
 Requires at least: 3.4.0
 Tested up to: 4.6.0
-Stable tag: 1.2.2
+Stable tag: 1.2.3
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 

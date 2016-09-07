@@ -99,7 +99,7 @@ class wpdevart_lightbox_front_end{
 		global $post;
 		if(isset( $post->ID ) &&  $post->ID)
 			$id=$post->ID;
-			//Adding url attribute for Lightbox popup 
+			//Adding url attribute for Lightbox plugin 
 			$pattern = "/(<a(?![^>]*?rel=['\"]wpdevart_lightbox.*)[^>]*?href=['\"][^'\"]+?\.(?:bmp|gif|jpg|jpeg|png)\?{0,1}\S{0,}['\"][^\>]*)>/i";			
 			$content=preg_replace_callback($pattern, function($all){
 				$loc_pattern="/(.*)?rel=['\"](.*?)['\"](.*)/i";

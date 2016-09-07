@@ -29,7 +29,7 @@
         </form>
       </div><!-- /.subscribe-block -->
 
-      <div class="pools-block">
+      <div class="pools-block" style="background-image: url(<?php $pool_bg = get_field('pool_bg'); echo $pool_bg['url']; ?>);">
         <?php if (function_exists('vote_poll') && !in_pollarchive()): ?>
           <ul>
             <li><?php get_poll();?></li>
