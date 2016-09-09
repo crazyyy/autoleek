@@ -3242,7 +3242,7 @@ function goBack() {
 }
 
 $('.gototop').on('click', function(event) {
-  var target = $(this.getAttribute('href'));
+  var target = $('body');
   if (target.length) {
     event.preventDefault();
     $('html, body').stop().animate({
