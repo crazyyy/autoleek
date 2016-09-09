@@ -40,8 +40,16 @@
       <div class="populars-block">
         <div class="row">
           <h6 class="populars-title col-md-12">Популярные статьи</h6>
-          <?php query_posts("showposts=6"); ?>
-            <?php get_template_part('loop-other'); ?>
+          <?php $popularpost = new WP_Query( array( 'posts_per_page' => 6, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) ); while ( $popularpost->have_posts() ) : $popularpost->the_post(); ?>
+            <div class="populars-item col-md-4">
+              <a href="<?php the_permalink(); ?>">
+                <?php  if ( has_post_thumbnail()) { the_post_thumbnail('small'); } else { ?>
+                  <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
+                <?php } ?>
+                <h3><?php the_title(); ?></h3>
+              </a>
+            </div><!-- populars-item -->
+          <?php endwhile; ?>
           <?php wp_reset_query(); ?>
         </div>
       </div><!-- /.populars-block -->

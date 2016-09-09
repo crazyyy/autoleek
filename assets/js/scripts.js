@@ -3180,7 +3180,8 @@ $(document).ready(function() {
     loop: true,
     items: 1,
     nav: true,
-    navText: ["<", ">"]
+    navText: ["<", ">"],
+    dots: true
   });
   $('.widget').each(function(index, el) {
     var searchAD = $(this).children('div').find('.adsbygoogle');
@@ -3239,3 +3240,20 @@ $(document).ready(function() {
 function goBack() {
   window.history.back();
 }
+
+$('.gototop').on('click', function(event) {
+  var target = $(this.getAttribute('href'));
+  if (target.length) {
+    event.preventDefault();
+    $('html, body').stop().animate({
+      scrollTop: target.offset().top
+    }, 1000);
+  }
+});
+$(window).scroll(function() {
+  if ($(window).scrollTop() > 1500) {
+    $('.gototop').fadeIn('fast');
+  } else {
+    $('.gototop').fadeOut('fast');
+  }
+});

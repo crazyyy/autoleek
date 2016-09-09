@@ -262,12 +262,10 @@ nav {
 
         text-align: center;
 
-
         color: $blue;
         border-radius: 2px;
         background-color: #fff;
         &:hover {
-
           background-color: $blueother;
         }
       }
@@ -276,6 +274,32 @@ nav {
       }
       .owl-next {
         right: 60px;
+      }
+    }
+    .owl-dots {
+      position: absolute;
+      top: 120px;
+      right: 0;
+      left: 0;
+
+      height: 25px;
+
+      text-align: center;
+      .owl-dot {
+        display: inline-block;
+
+        width: 25px;
+        height: 25px;
+        margin: 0 5px;
+
+        border: 1px solid #fff;
+        border-radius: 50%;
+        &:active {
+          background-color: $green;
+        }
+        &.active {
+          background-color: $blue;
+        }
       }
     }
   }
@@ -692,6 +716,53 @@ article {
       }
     }
     blockquote {
+      position: relative;
+
+      margin-bottom: 30px;
+      padding-right: 30px;
+      padding-bottom: 30px;
+      padding-left: 30px;
+
+      text-align: center;
+      p {
+        text-align: center;
+      }
+      &:after {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+
+        height: 15px;
+
+        background-image: url(../img/bg/blockquote-normal.png);
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @extend .dblock;
+      }
+    }
+    .content-link {
+      display: block;
+
+      margin-bottom: 20px;
+      padding-left: 100px;
+
+      text-decoration: underline;
+
+      color: $blue;
+      &:hover {
+        color: $green;
+      }
+      &:before {
+        margin-right: 10px;
+
+        content: '\f061';
+
+        @extend .fa;
+      }
+    }
+    .short-danger {
       font-size: 16px;
       line-height: 22px;
 
@@ -1202,7 +1273,29 @@ aside {
     }
   }
 }
+.gototop {
+  font-size: 24px;
+  line-height: 1.9;
 
+  position: fixed;
+  right: 10%;
+  bottom: 140px;
+
+  display: block;
+
+  width: 50px;
+  height: 50px;
+
+  text-align: center;
+
+  color: $blue;
+  border: 1px solid $blue;
+  border-radius: 50%;
+  &:hover {
+    color: $green;
+    border-color: $green;
+  }
+}
 footer {
   height: $footer;
   margin: $footer_margin auto 0;

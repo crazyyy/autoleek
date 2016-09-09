@@ -680,7 +680,49 @@ function wpb_track_post_views ($post_id) {
 }
 add_action( 'wp_head', 'wpb_track_post_views');
 
+// Add Shortcode
+function href_shortcode( $atts , $content = null ) {
 
+  $atts = shortcode_atts(
+    array(
+      'name' => '',
+      'link' => ''
+    ),
+    $atts,
+    'href'
+  );
+  global $content;
+
+  ob_start();
+
+  echo '<a class="content-link" href="'. $atts['link'] .'">'. $atts['name'] .'</a>';
+
+  $output = ob_get_clean();
+  return $output;
+
+
+}
+add_shortcode( 'href', 'href_shortcode' );
+
+
+function recent_posts_function($atts, $content = null) {
+   extract(shortcode_atts(array(
+      'posts' => 1,
+   ), $atts));
+
+   $return_string = '<h3>'.$content.'</h3>';
+   $return_string .= '<ul>';
+   query_posts(array('orderby' => 'date', 'order' => 'DESC' , 'showposts' => $posts));
+   if (have_posts()) :
+      while (have_posts()) : the_post();
+         $return_string .= '<li><a href="'.get_permalink().'">'.get_the_title().'</a></li>';
+      endwhile;
+   endif;
+   $return_string .= '</ul>';
+
+   wp_reset_query();
+   return $return_string;
+}
 
 
 ?>
