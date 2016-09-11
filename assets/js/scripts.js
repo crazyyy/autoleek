@@ -3204,22 +3204,22 @@ $(document).ready(function() {
     $element.attr('placeholder', 'Поиск...');
   })
 
-  $('#nav_menu-2 li').each(function(index, el) {
-    if ($(this).children('ul').length > 0) {
-      $(this).addClass('nav-first-level');
-      $(this).addClass('nav-closed');
-    }
-  });
+  // $('#nav_menu-2 li').each(function(index, el) {
+  //   if ($(this).children('ul').length > 0) {
+  //     $(this).addClass('nav-first-level');
+  //     $(this).addClass('nav-closed');
+  //   }
+  // });
 
-  $('.nav-closed').on('click', function(event) {
-    // event.preventDefault();
-    $(this).removeClass('nav-closed');
-    $(this).addClass('nav-opened');
-  })
-  $('.nav-opened').click(function(event) {
-    console.log('sasa');
-    return true;
-  })
+  // $('.nav-closed').on('click', function(event) {
+  //   // event.preventDefault();
+  //   $(this).removeClass('nav-closed');
+  //   $(this).addClass('nav-opened');
+  // })
+  // $('.nav-opened').click(function(event) {
+  //   console.log('sasa');
+  //   return true;
+  // })
 
 
 });
@@ -3257,3 +3257,48 @@ $(window).scroll(function() {
     $('.gototop').fadeOut('fast');
   }
 });
+
+
+$('#menu-widget .menu-item-has-children a').on('click', function(event){
+  event.preventDefault();
+  var catID = $(this).parent('li').attr('class');
+
+  // search string
+  re = /datacat-\d/i
+  // create object to search in class string
+  found = catID.match(re)
+  // create array from class in result
+  var array = found.input.split(' ');
+  // search in array for word
+  var classID = array[found.index];
+  // search ID in class
+  var ID = classID.replace(/datacat-/, '')
+
+  console.log(ID)
+
+  var workUriCat = 'http://' + window.location.hostname + '/wp-json/wp/v2/categories/' + ID;
+  $.getJSON(workUriCat, function(data, status) {
+    var catName = data.name;
+    $('article').html('<h1 class="cat-title inner-title" style="background-image: url(http://' + window.location.hostname + '/wp-content/themes/wp-autoleek/img/bg/cat-title.jpg);">' + catName + '</h1>')
+  })
+
+
+  var workUri = 'http://' + window.location.hostname + '/wp-json/acf/v2/term/category/' + ID;
+  $.getJSON(workUri, function(data, status) {
+    var description = data.acf.description;
+    $('article').append(description);
+
+    if ( data.acf.title_bg ) {
+      var bgi = 'url("' + data.acf.title_bg.url +'");';
+
+      console.log(bgi);
+      $('.article-cat .cat-title').css('background-image', bgi);
+
+    }
+
+
+  })
+
+
+
+})

@@ -1192,14 +1192,25 @@ aside {
     &#nav_menu-2 {
       padding-bottom: 0;
       ul {
-        margin-right: -30px;
-        margin-left: -30px;
+        margin-right: -50px;
+        margin-left: -50px;
         padding-right: 30px;
         padding-left: 30px;
         li {
           font-size: 18px;
 
           margin: 0 0 10px;
+          > a {
+            line-height: 1.8;
+
+            @extend .clearfix;
+            img {
+              float: left;
+
+              max-width: 40px;
+              margin-right: 10px;
+            }
+          }
           &.nav-first-level {
             margin-bottom: 10px;
             padding-top: 0;
@@ -1224,9 +1235,12 @@ aside {
         }
         .sub-menu {
           margin-top: 10px;
+          margin-right: -10px;
+          margin-left: -10px;
           padding-top: 5px;
+          padding-right: 10px;
           padding-bottom: 1px;
-          padding-left: 60px;
+          padding-left: 35px;
 
           background-color: #fff;
           li {
@@ -1235,7 +1249,7 @@ aside {
             position: relative;
             &:before {
               position: absolute;
-              top: 3px;
+              top: 5px;
               left: -15px;
 
               @extend .dblock;

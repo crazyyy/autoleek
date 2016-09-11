@@ -61,3 +61,7 @@ https://monosnap.com/file/UhYq8H1u1eqC1mwGy3hK6waKhOhejh.png
 //-+
 
 
+http://autoleek.dev/wp-json/acf/v2/term/category/38
+http://autoleek.dev/wp-json/acf/v2/term/category/29
+http://autoleek.dev/wp-admin/edit-tags.php?taxonomy=category
+https://github.com/airesvsg/acf-to-wp-rest-api
