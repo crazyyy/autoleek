@@ -41,7 +41,7 @@
         <div class="row">
           <h6 class="populars-title col-md-12">Популярные статьи</h6>
           <?php $popularpost = new WP_Query( array( 'posts_per_page' => 6, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) ); while ( $popularpost->have_posts() ) : $popularpost->the_post(); ?>
-            <div class="populars-item col-md-4">
+            <div class="populars-item col-md-4 col-sm-6 col-xs-6">
               <a href="<?php the_permalink(); ?>">
                 <?php  if ( has_post_thumbnail()) { the_post_thumbnail('small'); } else { ?>
                   <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />

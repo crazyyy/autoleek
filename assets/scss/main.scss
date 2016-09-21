@@ -432,7 +432,7 @@ nav {
     li {
       font-size: 16px;
 
-      margin-bottom: 20px;
+      margin-bottom: 15px;
 
       color: #000;
     }
@@ -1407,3 +1407,107 @@ footer {
 @import 'fonts/font_roboto';
 @import 'base64';
 @import 'import/print';
+
+@media (max-width: 1200px) {
+  nav .headnav {
+    padding-top: 55px;
+  }
+  footer {
+    height: 180px;
+  }
+}
+
+@media (max-width: 980px) {
+  nav .headnav {
+    text-align: center !important;
+  }
+  header .searcher {
+    padding-top: 40px;
+  }
+  header .logo {
+    padding-top: 50px;
+    padding-left: 0;
+  }
+  footer {
+    height: 380px;
+  }
+}
+@media (max-width: 845px) {
+  header .searcher {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  header .searcher form {
+    right: 40px;
+  }
+}
+@media (max-width: 768px) {
+  header .searcher form .btn-close {
+    line-height: 3;
+  }
+}
+@media (max-width: 650px) {
+  nav .headnav li {
+    margin-bottom: 20px;
+  }
+  header .searcher {
+    padding-top: 60px;
+  }
+  header .searcher .search-from-container {
+    width: 40px;
+    height: 40px;
+  }
+  header .searcher .search-from-container .btn-fake-search {
+    width: 40px;
+    height: 40px;
+  }
+
+  header .searcher .search-from-container .fa,
+  header .searcher .search-from-container article.post .content-link:before,
+  article.post header .searcher .search-from-container .content-link:before {
+    font-size: 20px;
+  }
+}
+@media (max-width: 590px) {
+  .pools-block .wp-polls-ul li {
+    margin-bottom: 5px;
+    font-size: 13px;
+  }
+  .pools-block {
+    padding-left: 10px;
+    padding-right: 10px;
+  }
+}
+@media (max-width: 520px) {
+  header .searcher form {
+    width: 320px;
+  }
+}
+@media (max-width: 480px) {
+  nav .headnav {
+    padding-top: 20px;
+  }
+  header .searcher .search-from-container {
+    width: 30px;
+    height: 30px;
+  }
+  header .searcher .search-from-container .btn-fake-search {
+    width: 30px;
+    height: 30px;
+    padding-right: 0;
+    padding-left: 0;
+
+    text-align: center;
+  }
+
+  header .searcher .search-from-container .fa,
+  header .searcher .search-from-container article.post .content-link:before,
+  article.post header .searcher .search-from-container .content-link:before {
+    font-size: 16px;
+  }
+}
+@media (max-width: 380px) {
+  footer {
+    height: 460px;
+  }
+}

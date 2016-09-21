@@ -27,7 +27,7 @@
     <div class="container">
       <div class="row">
 
-        <div class="logo col-md-4">
+        <div class="logo col-md-4 col-sm-3 col-xs-4">
           <?php if ( is_front_page() && is_home() ){ } else { ?>
             <a href="<?php echo home_url(); ?>">
               <?php  } ?>
@@ -38,11 +38,11 @@
           <?php } ?>
         </div><!-- /logo -->
 
-        <nav class="nav__header col-md-4 col-md-offset-3" role="navigation">
+        <nav class="nav__header col-md-4 col-md-offset-3 col-sm-8 col-xs-7" role="navigation">
           <?php wpeHeadNav(); ?>
         </nav><!-- /nav -->
 
-        <div class="searcher col-md-1">
+        <div class="searcher col-md-1 col-sm-1 col-xs-1">
           <div class="search-from-container">
             <button class="btn-fake-search"><i class="fa fa-search" aria-hidden="true"></i></button>
             <form method="get" name="searchform" action="<?php bloginfo('url'); ?>/">
