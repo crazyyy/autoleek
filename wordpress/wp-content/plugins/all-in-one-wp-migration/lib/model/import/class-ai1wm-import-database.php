@@ -366,8 +366,8 @@ class Ai1wm_Import_Database {
 		// Get URL IP
 		$url_ip = get_option( AI1WM_URL_IP );
 
-		// Get URL transport
-		$url_transport = get_option( AI1WM_URL_TRANSPORT );
+		// Get URL adapter
+		$url_adapter = get_option( AI1WM_URL_ADAPTER );
 
 		// Get secret key
 		$secret_key = get_option( AI1WM_SECRET_KEY );
@@ -449,8 +449,8 @@ class Ai1wm_Import_Database {
 		// Set the new URL IP
 		update_option( AI1WM_URL_IP, $url_ip );
 
-		// Set the new URL transport
-		update_option( AI1WM_URL_TRANSPORT, $url_transport );
+		// Set the new URL adapter
+		update_option( AI1WM_URL_ADAPTER, $url_adapter );
 
 		// Set the new secret key value
 		update_option( AI1WM_SECRET_KEY, $secret_key );

@@ -522,9 +522,6 @@ abstract class Ai1wm_Database {
 	 */
 	public function import( $file_name ) {
 
-		// Set collation name
-		$collation = $this->get_collation( 'utf8mb4_general_ci' );
-
 		// Set max allowed packet
 		$max_allowed_packet = $this->get_max_allowed_packet();
 
@@ -554,10 +551,8 @@ abstract class Ai1wm_Database {
 					// Replace table values
 					$query = $this->replace_table_values( $query, true );
 
-					// Replace table collation
-					if ( empty( $collation ) ) {
-						$query = $this->replace_table_collation( $query );
-					}
+					// Replace table collations
+					$query = $this->replace_table_collations( $query );
 
 					try {
 
@@ -781,13 +776,29 @@ abstract class Ai1wm_Database {
 	}
 
 	/**
-	 * Replace table collation
+	 * Replace table collations
 	 *
 	 * @param  string $input SQL statement
 	 * @return string
 	 */
-	protected function replace_table_collation($input) {
-		return str_ireplace( 'utf8mb4', 'utf8', $input );
+	protected function replace_table_collations( $input ) {
+		static $search = array();
+		static $replace = array();
+
+		// Replace table collations
+		if ( empty( $search ) || empty( $replace ) ) {
+			if ( ! $this->wpdb->has_cap( 'utf8mb4_520' ) ) {
+				if ( ! $this->wpdb->has_cap( 'utf8mb4' ) ) {
+					$search = array( 'utf8mb4_unicode_520_ci', 'utf8mb4' );
+					$replace = array( 'utf8_unicode_ci', 'utf8' );
+				} else {
+					$search = array( 'utf8mb4_unicode_520_ci' );
+					$replace = array( 'utf8mb4_unicode_ci' );
+				}
+			}
+		}
+
+		return str_ireplace( $search, $replace, $input );
 	}
 
 	/**
@@ -796,7 +807,7 @@ abstract class Ai1wm_Database {
 	 * @param  string $input SQL statement
 	 * @return string
 	 */
-	protected function strip_table_constraints($input) {
+	protected function strip_table_constraints( $input ) {
 		$pattern = array(
 			'/\s+CONSTRAINT(.+)REFERENCES(.+),/i',
 			'/,\s+CONSTRAINT(.+)REFERENCES(.+)/i',

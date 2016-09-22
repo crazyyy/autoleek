@@ -55,12 +55,12 @@ class Ai1wm_Resolve_Controller {
 			update_option( AI1WM_URL_IP, $ip );
 		}
 
-		// Set transport layer
-		if ( isset( $params['url_transport'] ) && ( $transport = $params['url_transport'] ) ) {
-			if ( $transport === 'curl' ) {
-				update_option( AI1WM_URL_TRANSPORT, 'curl' );
+		// Set adapter
+		if ( isset( $params['url_adapter'] ) && ( $adapter = $params['url_adapter'] ) ) {
+			if ( $adapter === 'curl' ) {
+				update_option( AI1WM_URL_ADAPTER, 'curl' );
 			} else {
-				update_option( AI1WM_URL_TRANSPORT, 'stream' );
+				update_option( AI1WM_URL_ADAPTER, 'stream' );
 			}
 		}
 	}

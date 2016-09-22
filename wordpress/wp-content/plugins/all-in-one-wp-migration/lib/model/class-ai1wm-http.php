@@ -35,18 +35,18 @@ class Ai1wm_Http {
 		// Get IP address
 		$ip = get_option( AI1WM_URL_IP );
 
-		// Get transport
-		$transport = get_option( AI1WM_URL_TRANSPORT );
+		// Get adapter
+		$adapter = get_option( AI1WM_URL_ADAPTER );
 
 		// HTTP request
-		Ai1wm_Http::request( $url, $ip, $transport, $params );
+		Ai1wm_Http::request( $url, $ip, $adapter, $params );
 	}
 
 	public static function resolve( $url ) {
 
-		// Reset IP address and transport layer
+		// Reset IP address and adapter
 		delete_option( AI1WM_URL_IP );
-		delete_option( AI1WM_URL_TRANSPORT );
+		delete_option( AI1WM_URL_ADAPTER );
 
 		// Set secret
 		$secret_key = get_option( AI1WM_SECRET_KEY );
@@ -67,7 +67,7 @@ class Ai1wm_Http {
 		$local = gethostbyname( $host );
 
 		// HTTP resolve
-		foreach ( array( 'stream', 'curl' ) as $transport ) {
+		foreach ( array( 'stream', 'curl' ) as $adapter ) {
 			foreach ( array( $server, $local, $host ) as $ip ) {
 
 				// Add IPv6 support
@@ -76,10 +76,10 @@ class Ai1wm_Http {
 				}
 
 				// HTTP request
-				Ai1wm_Http::request( $url, $ip, $transport, array(
+				Ai1wm_Http::request( $url, $ip, $adapter, array(
 					'secret_key' => $secret_key,
 					'url_ip' => $ip,
-					'url_transport' => $transport,
+					'url_adapter' => $adapter,
 				) );
 
 				// HTTP response
@@ -88,8 +88,8 @@ class Ai1wm_Http {
 					// Flush WP cache
 					ai1wm_cache_flush();
 
-					// Is valid transport layer?
-					if ( get_option( AI1WM_URL_IP ) && get_option( AI1WM_URL_TRANSPORT ) ) {
+					// Is valid adapter?
+					if ( get_option( AI1WM_URL_IP ) && get_option( AI1WM_URL_ADAPTER ) ) {
 						return;
 					}
 				}
@@ -104,7 +104,7 @@ class Ai1wm_Http {
 		) );
 	}
 
-	public static function request( $url, $ip, $transport, $params = array() ) {
+	public static function request( $url, $ip, $adapter, $params = array() ) {
 		// Set host
 		$host = parse_url( $url, PHP_URL_HOST );
 
@@ -126,6 +126,13 @@ class Ai1wm_Http {
 			$headers[] = "Host: {$host}";
 		}
 
+		// Set user agent header
+		if ( ! empty( $_SERVER['HTTP_USER_AGENT'] ) ) {
+			$headers[] = "User-Agent: {$_SERVER['HTTP_USER_AGENT']}";
+		} else {
+			$headers[] = "User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_10_5) AppleWebKit/537.36 (KHTML, like Gecko)";
+		}
+
 		// Add authorization header
 		if ( ( $user = get_option( AI1WM_AUTH_USER ) ) && ( $password = get_option( AI1WM_AUTH_PASSWORD ) ) ) {
 			if ( ( $hash = base64_encode( "{$user}:{$password}" ) ) ) {
@@ -134,6 +141,6 @@ class Ai1wm_Http {
 		}
 
 		// HTTP request
-		Ai1wm_Http_Factory::create( $transport )->get( add_query_arg( $params, $url ), $headers );
+		Ai1wm_Http_Factory::create( $adapter )->get( add_query_arg( ai1wm_urlencode( $params ), $url ), $headers );
 	}
 }

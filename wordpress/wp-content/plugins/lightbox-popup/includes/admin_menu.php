@@ -185,7 +185,7 @@ class wpdevart_lightbox_admin_menu{
 					</tr>
                     <tr>
 						<td>
-							Overlay top background color <span class="pro_feature"> (pro)</span> <span title="Select overlay top background color" class="desription_class">?</span>
+							Overlay top background color <span class="pro_feature"> (pro)</span> <span title="Set overlay top background color" class="desription_class">?</span>
 						</td>
 						<td>                            
 							<div class="disabled_picker">
@@ -195,7 +195,7 @@ class wpdevart_lightbox_admin_menu{
 					</tr>
                     <tr>
 						<td>
-							Overlay bottom background color <span class="pro_feature"> (pro)</span><span title="Select overlay bottom background color" class="desription_class">?</span>
+							Overlay bottom background color <span class="pro_feature"> (pro)</span><span title="Set overlay bottom background color" class="desription_class">?</span>
 						</td>
 						<td>
 							<div class="disabled_picker">
@@ -1065,7 +1065,7 @@ class wpdevart_lightbox_admin_menu{
 				<tbody> 
                 	<tr>
 						<td>
-							Show information panel <span title="Choose to Show/Hide information panel" class="desription_class">?</span>
+							Show information panel <span title="Show/Hide information panel" class="desription_class">?</span>
 						</td>
 						<td>
 							<select id="information_panel_show">
