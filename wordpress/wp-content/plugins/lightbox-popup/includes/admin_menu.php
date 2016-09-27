@@ -1305,7 +1305,7 @@ class wpdevart_lightbox_admin_menu{
 					</tr>
                      <tr>
 						<td>
-							Title font size <span title="Type the title font size " class="desription_class">?</span>
+							Title font size <span title="Type the title font size(px)" class="desription_class">?</span>
 						</td>
 						<td>
 							<input type="number"  id="information_panel_title_font_size" name="information_panel_title_font_size"  min="0"  step="1"  value="<?php echo $page_parametrs['information_panel_title_font_size'] ?>"/>	<small>Px</small>					
@@ -1321,7 +1321,7 @@ class wpdevart_lightbox_admin_menu{
 					</tr>
                     <tr>
 						<td>
-							Title font weight <span class="pro_feature"> (pro)</span><span title="Select the title font weight" class="desription_class">?</span>
+							Title font weight <span class="pro_feature"> (pro)</span><span title="Select the title font weight(px)" class="desription_class">?</span>
 						</td>
 						<td>
 							<select class="pro_select" id="information_panel_title_font_weigth">
@@ -1354,7 +1354,7 @@ class wpdevart_lightbox_admin_menu{
 					</tr>
                    <tr>
 						<td>							
-                            Show default description text if image doesn't have title <span title="Show/Hide default description text if image doesn't have title" class="desription_class">?</span>
+                            Show default description text if image doesn't have title <span title="Show/Hide default description text if image don't have title" class="desription_class">?</span>
 						</td>
 						<td>
 							<select id="information_panel_title_show_if_not">
@@ -1434,7 +1434,7 @@ class wpdevart_lightbox_admin_menu{
 						'image_url'		=>	wpdevart_lightbox_plugin_url.'images/featured_plugins/facebook-comments-icon.png',
 						'site_url'		=>	'http://wpdevart.com/wordpress-facebook-comments-plugin/',
 						'title'			=>	'WordPress Facebook comments',
-						'description'	=>	'Our Facebook comments plugin will help you to display Facebook Comments on your website. You can use Facebook Comments on your pages/posts.'
+						'description'	=>	'Facebook comments plugin will help you to display Facebook Comments on your website. You can use Facebook Comments on your pages/posts or even in Php code.'
 						),						
 			'facebook'=>array(
 						'image_url'		=>	wpdevart_lightbox_plugin_url.'images/featured_plugins/facebook.jpg',
@@ -1446,7 +1446,7 @@ class wpdevart_lightbox_admin_menu{
 						'image_url'		=>	wpdevart_lightbox_plugin_url.'images/featured_plugins/poll.png',
 						'site_url'		=>	'http://wpdevart.com/wordpress-polls-plugin',
 						'title'			=>	'Poll',
-						'description'	=>	'WordPress Polls plugin is an wonderful tool for creating polls and survey forms for your visitors. You can use our polls on widgets, posts and pages.'
+						'description'	=>	'WordPress Polls plugin is an wonderful tool for creating polls and survey forms for your visitors. You can use polls on widgets, posts and pages.'
 						),
 												
 			

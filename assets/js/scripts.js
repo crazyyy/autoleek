@@ -3179,6 +3179,7 @@ $(document).ready(function() {
   $(".home-carousel").owlCarousel({
     loop: true,
     items: 1,
+    autoplay: true,
     nav: true,
     navText: ["<", ">"],
     dots: true
@@ -3259,15 +3260,15 @@ $(window).scroll(function() {
 });
 
 
-$('#menu-widget .menu-item-has-children a').on('click', function(event){
+$('#menu-widget .menu-item-has-children a').on('click', function(event) {
   event.preventDefault();
   var catID = $(this).parent('li').attr('class');
 
   // search string
   re = /datacat-\d/i
-  // create object to search in class string
+    // create object to search in class string
   found = catID.match(re)
-  // create array from class in result
+    // create array from class in result
   var array = found.input.split(' ');
   // search in array for word
   var classID = array[found.index];
@@ -3282,23 +3283,44 @@ $('#menu-widget .menu-item-has-children a').on('click', function(event){
     $('article').html('<h1 class="cat-title inner-title" style="background-image: url(http://' + window.location.hostname + '/wp-content/themes/wp-autoleek/img/bg/cat-title.jpg);">' + catName + '</h1>')
   })
 
-
   var workUri = 'http://' + window.location.hostname + '/wp-json/acf/v2/term/category/' + ID;
   $.getJSON(workUri, function(data, status) {
     var description = data.acf.description;
     $('article').append(description);
 
-    if ( data.acf.title_bg ) {
-      var bgi = 'url("' + data.acf.title_bg.url +'");';
+    if (data.acf.title_bg) {
+      var bgi = 'url("' + data.acf.title_bg.url + '");';
 
       console.log(bgi);
       $('.article-cat .cat-title').css('background-image', bgi);
 
     }
-
-
   })
 
+})
 
+$('.mobile-nav-container .search-input').on('click', function() {
+  $(this).val('');
+  $(this).attr('placeholder', 'Поиск');
+})
 
+$('.mobile-nav-container .sidebarnav span').on('click', function(event) {
+  event.preventDefault();
+  var $parentLi = $(this).parent('a').parent('li');
+  if ($parentLi.hasClass('active-li')) {
+    $parentLi.removeClass('active-li');
+  } else {
+    $('.mobile-nav-container .sidebarnav li').removeClass('active-li');
+    $parentLi.addClass('active-li');
+  }
+})
+
+$('.mobile-nav').on('click', function(event) {
+  if ($(this).hasClass('mobile-nav-opened')) {
+    $(this).removeClass('mobile-nav-opened');
+    $('.mobile-nav-container').hide('fast');
+  } else {
+    $(this).addClass('mobile-nav-opened')
+    $('.mobile-nav-container').show('fast')
+  }
 })

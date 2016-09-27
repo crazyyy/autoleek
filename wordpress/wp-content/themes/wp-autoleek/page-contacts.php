@@ -1,19 +1,13 @@
 <?php /* Template Name: Contacts Page */ get_header(); ?>
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class('col-md-8 article-cat'); ?>>
-      <h1 class="cat-title inner-title"><?php the_title(); ?></h1>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('col-md-12 article-cat'); ?>>
+      <h1 class="contacts-title inner-title"><span><?php the_title(); ?></span></h1>
 
       <?php the_content(); ?>
-      <?php edit_post_link(); ?>
-      <div class="relative-posts">
-        <div class="row">
-          <h6 class="populars-title col-md-12">Популярное в рубрике</h6>
-          <?php query_posts("showposts=6"); ?>
-            <?php get_template_part('loop-other'); ?>
-          <?php wp_reset_query(); ?>
-        </div>
-      </div><!-- /.relative-posts -->
+      <?php echo do_shortcode('[contact-form-7 id="1310" title="Contact Form"]'); ?>
+      <p>Мы ценим наших посетителей и отвечаем на все сообщения в максимально короткие сроки.</p>
+
     </article>
   <?php endwhile; endif; ?>
-<?php get_sidebar(); ?>
+
 <?php get_footer(); ?>

@@ -14,12 +14,7 @@
       </div><!-- /.copyright col-md-3 -->
 
       <div class="footer-navi col-md-3">
-        <ul>
-          <li><a href="">Карта сайта</a></li>
-          <li><a href="">Архив публикаций</a></li>
-          <li><a href="">Реклама на сайте</a></li>
-          <li><a href="">Обратная связь</a></li>
-        </ul>
+        <?php wpeFootNav(); ?>
       </div><!-- /.footer-navi col-md-3 -->
 
       <div class="footer-subscribe col-md-6">

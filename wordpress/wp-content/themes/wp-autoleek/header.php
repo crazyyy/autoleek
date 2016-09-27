@@ -27,7 +27,7 @@
     <div class="container">
       <div class="row">
 
-        <div class="logo col-md-4 col-sm-3 col-xs-4">
+        <div class="logo col-md-4 col-sm-6 col-xs-6">
           <?php if ( is_front_page() && is_home() ){ } else { ?>
             <a href="<?php echo home_url(); ?>">
               <?php  } ?>
@@ -38,8 +38,21 @@
           <?php } ?>
         </div><!-- /logo -->
 
-        <nav class="nav__header col-md-4 col-md-offset-3 col-sm-8 col-xs-7" role="navigation">
+        <nav class="nav__header col-md-4 col-md-offset-3 col-sm-6 col-xs-6" role="navigation">
           <?php wpeHeadNav(); ?>
+          <button class="mobile-nav">
+            <i class="fa fa-bars" aria-hidden="true"></i>
+            <i class="fa fa-times" aria-hidden="true"></i>
+          </button>
+          <div class="mobile-nav-container">
+            <form class="search" method="get" action="<?php echo home_url(); ?>" role="search">
+              <input class="search-input" type="search" name="s" value="Поиск">
+              <button class="search-submit" type="submit" role="button"><i class="fa fa-search" aria-hidden="true"></i></button>
+            </form><!-- /search -->
+            <h6>Меню</h6>
+            <?php wpeSideNav(); ?>
+            <?php wpeHeadNav(); ?>
+          </div><!-- /.mobile-nav-container -->
         </nav><!-- /nav -->
 
         <div class="searcher col-md-1 col-sm-1 col-xs-1">

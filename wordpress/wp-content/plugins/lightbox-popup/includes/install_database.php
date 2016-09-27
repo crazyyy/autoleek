@@ -5,7 +5,7 @@
 
 class wpdevart_lightbox_database_params{
 	
-	public $installed_options; // All standard options for Lightbox
+	public $installed_options; // All standard options for Lightbox Popup
 
 	function __construct(){
 		
