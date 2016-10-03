@@ -1,6 +1,6 @@
 <?php /* Template Name: Contacts Page */ get_header(); ?>
   <?php if (have_posts()): while (have_posts()) : the_post(); ?>
-    <article id="post-<?php the_ID(); ?>" <?php post_class('col-md-12 article-cat'); ?>>
+    <article id="post-<?php the_ID(); ?>" <?php post_class('col-md-12 article-cat pagest'); ?>>
       <h1 class="contacts-title inner-title"><span><?php the_title(); ?></span></h1>
 
       <?php the_content(); ?>

@@ -26,98 +26,98 @@ msgid "0"
 msgstr "Europe/Kiev"
 
 #. translators: 1: WP_Site_Query, 2: WP_Network_Query
-#: wp-admin/about.php:188
+#: wp-admin/about.php:196
 msgid "Cached and comprehensive site queries improve your network admin experience. The addition of %1$s and %2$s help craft advanced queries with less effort."
 msgstr "Кешовані глибокі запити сайту для покращення роботи з мережею сайтів. %1$s та %2$s додані, щоби допомогти створювати розширені запити при менших зусиллях."
 
-#: wp-admin/about.php:181
+#: wp-admin/about.php:189
 msgid "Settings now have an <a href=\"https://make.wordpress.org/core/2016/07/05/customizer-apis-in-4-6-for-setting-validation-and-notifications/\">API for enforcing validation constraints</a>. Likewise, customizer controls now support notifications, which are used to display validation errors instead of failing silently."
 msgstr "Налаштування тепер мають <a href=\"https://make.wordpress.org/core/2016/07/05/customizer-apis-in-4-6-for-setting-validation-and-notifications/\">API</a>. Також, засоби налаштовувача тепер підтримують сповіщення, які використовуються для відображення помилок перевірки."
 
-#: wp-admin/about.php:184
+#: wp-admin/about.php:192
 msgid "Multisite, now faster than ever"
 msgstr "Мережа сайтів, тепер швидше ніж будь-коли"
 
-#: wp-admin/about.php:170
+#: wp-admin/about.php:178
 msgid "WordPress will install and use the newest language packs for your plugins and themes as soon as they&#8217;re available from <a href=\"https://translate.wordpress.org/\">WordPress.org&#8217;s community of translators</a>."
 msgstr "WordPress встановлюватиме та використовуватиме найновіші мовні пакунки для ваших плагінів і тем коли вони будуть доступні в <a href=\"https://translate.wordpress.org/\">спільноті перекладачів WordPress.org</a>."
 
-#: wp-admin/about.php:174
+#: wp-admin/about.php:182
 msgid "Masonry 3.3.2, imagesLoaded 3.2.0, MediaElement.js 2.22.0, TinyMCE 4.4.1, and Backbone.js 1.3.3 are bundled."
 msgstr "Masonry 3.3.2, imagesLoaded 3.2.0, MediaElement.js 2.22.0, TinyMCE 4.4.1, та Backbone.js 1.3.3 включено."
 
-#: wp-admin/about.php:180
+#: wp-admin/about.php:188
 msgid "Customizer APIs for Setting Validation and Notifications"
 msgstr "Customizer API для перевірки налаштувань і сповіщень"
 
 #. translators: %s:
 #. https://make.wordpress.org/core/2016/07/08/enhancing-register_meta-in-4-6/
-#: wp-admin/about.php:163
+#: wp-admin/about.php:171
 msgid "The Meta Registration API <a href=\"%s\">has been expanded</a> to support types, descriptions, and REST API visibility."
 msgstr "API реєстрації метаданих <a href=\"%s\">розширено</a> для підтримки типів, описів, і видимості REST API."
 
-#: wp-admin/about.php:169
+#: wp-admin/about.php:177
 msgid "Translations On Demand"
 msgstr "Переклади за потребою"
 
 #. translators: 1: WP_Term_Query, 2: WP_Post_Type
-#: wp-admin/about.php:149
+#: wp-admin/about.php:157
 msgid "A new %1$s class adds flexibility to query term information while a new %2$s object makes interacting with post types more predictable."
 msgstr "Новий клас %1$s додає гнучкості, а новий об'єкт %2$s робить взаємодію з типами записів передбачуванішою."
 
-#: wp-admin/about.php:159
+#: wp-admin/about.php:167
 msgid "Meta Registration API"
 msgstr "API реєстрації метаданих"
 
-#: wp-admin/about.php:139
+#: wp-admin/about.php:147
 msgid "The HTTP API now leverages the Requests library, improving HTTP standard support and adding case-insensitive headers, parallel HTTP requests, and support for Internationalized Domain Names."
 msgstr "HTTP API тепер використовує бібліотеку запитів, покращуючи підтримку стандарту HTTP та додаючи нечутливі до регістру заголовки, паралельні запити HTTP, та підтримку інтернаціоналізованих доменів."
 
 #. translators: 1: WP_Term_Query, 2: WP_Post_Type
-#: wp-admin/about.php:144
+#: wp-admin/about.php:152
 msgid "%1$s and %2$s"
 msgstr "%1$s та %2$s"
 
 #. translators: %s:
 #. https://make.wordpress.org/core/2016/07/06/resource-hints-in-4-6/
-#: wp-admin/about.php:132
+#: wp-admin/about.php:140
 msgid "<a href=\"%s\">Resource hints help browsers</a> decide which resources to fetch and preprocess. WordPress 4.6 adds them automatically for your styles and scripts making your site even faster."
 msgstr "<a href=\"%s\">Поради ресурсів допомагають браузерам</a> вирішувати які ресурси отримувати та готувати. WordPress 4.6 додає їх автоматично для ваших стилів і скриптів, пришвидшуючи ваш сайт."
 
-#: wp-admin/about.php:138
+#: wp-admin/about.php:146
 msgid "Robust Requests"
 msgstr "Покращені запити"
 
-#: wp-admin/about.php:117
+#: wp-admin/about.php:125
 msgid "As you type, WordPress saves your content to the browser. Recovering saved content is even easier with WordPress 4.6."
 msgstr "Коли ви друкуєте, WordPress зберігає ваш вміст до браузера. Відновлення збереженого вмісту легше з WordPress 4.6."
 
-#: wp-admin/about.php:128
+#: wp-admin/about.php:136
 msgid "Resource Hints"
 msgstr "Поради ресурсів"
 
 #. translators: %s: Home URL appended with 'wordpress.org'
-#: wp-admin/about.php:109
+#: wp-admin/about.php:117
 msgid "Ever accidentally made a link to %s? Now WordPress automatically checks to make sure you didn&#8217;t."
 msgstr "Колись випадково робили посилання до %s? Тепер WordPress автоматично перевіряє, щоби такого не траплялося."
 
-#: wp-admin/about.php:116
+#: wp-admin/about.php:124
 msgid "Content Recovery"
 msgstr "Відновлення вмісту"
 
-#: wp-admin/about.php:105
+#: wp-admin/about.php:113
 msgid "Inline Link Checker"
 msgstr "Перевірка посилань"
 
-#: wp-admin/about.php:95
+#: wp-admin/about.php:103
 msgid "The WordPress dashboard now takes advantage of the fonts you already have, making it load faster and letting you feel more at home on whatever device you use."
 msgstr "Майстерня WordPress тепер використовує наявні шрифти, пришвидшуючи завантаження та покращуючи враження від будь-якого пристрою."
 
-#: wp-admin/about.php:70
+#: wp-admin/about.php:78
 msgid "Don&#8217;t lose your place: stay on the same page while you update, install, and delete your plugins and themes."
 msgstr "Не втрачайте місце перебування: залишайтеся на тій самій сторінці під час оновлення, встановлення, та видалення плагінів і тем."
 
-#: wp-admin/about.php:94
+#: wp-admin/about.php:102
 msgid "Native Fonts"
 msgstr "Рідні шрифти"
 
@@ -125,7 +125,7 @@ msgstr "Рідні шрифти"
 msgid "Thank you for updating to the latest version. WordPress %s changes a lot behind the scenes to make your WordPress experience even better!"
 msgstr "Дякуємо за оновлення до останньої версії. WordPress %s змінюється, щоби зробити ваш досвід використання WordPress ще кращим!"
 
-#: wp-admin/about.php:69
+#: wp-admin/about.php:77
 msgid "Streamlined Updates"
 msgstr "Покращені оновлення"
 
@@ -551,11 +551,11 @@ msgstr "Керівник дизайну випуску"
 msgid "Release Deputy"
 msgstr "Заступник випуску"
 
-#: wp-admin/about.php:173
+#: wp-admin/about.php:181
 msgid "JavaScript Library Updates"
 msgstr "Оновлення бібліотеки JavaScript"
 
-#: wp-admin/about.php:102
+#: wp-admin/about.php:110
 msgid "Editor Improvements"
 msgstr "Покращення редактора"
 
@@ -1038,7 +1038,7 @@ msgid "(Currently set to: %s)"
 msgstr "(Наразі встановлено: %s)"
 
 #. translators: %s: WordPress version number
-#: wp-admin/about.php:226
+#: wp-admin/about.php:234
 msgid "<strong>Version %s</strong> addressed one security issue."
 msgstr "У <strong>версії %s</strong> виправлено одну проблему безпеки."
 
@@ -1060,15 +1060,15 @@ msgstr "https://uk.gravatar.com/"
 msgid "Profile Picture"
 msgstr "Зображення облікового запису"
 
-#: wp-admin/about.php:217
+#: wp-admin/about.php:225
 msgid "Maintenance Releases"
 msgstr "Випуски обслуговування"
 
-#: wp-admin/about.php:220
+#: wp-admin/about.php:228
 msgid "Security Releases"
 msgstr "Випуски безпеки"
 
-#: wp-admin/about.php:223
+#: wp-admin/about.php:231
 msgid "Maintenance and Security Releases"
 msgstr "Випуски обслуговування та безпеки"
 
@@ -5283,7 +5283,7 @@ msgstr "Показувати панель інструментів при пер
 
 #. translators: 1: WordPress version number, 2: plural number of bugs. Singular
 #. security issue.
-#: wp-admin/about.php:235
+#: wp-admin/about.php:243
 msgid "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed a security issue and fixed %2$s bugs."
 msgstr[0] "У <strong>версії %1$s</strong> виправлено проблему безпеки та %2$s помилку."
@@ -5291,13 +5291,13 @@ msgstr[1] "У <strong>версії %1$s</strong> виправлено пробл
 msgstr[2] "У <strong>версії %1$s</strong> виправлено проблему безпеки та %2$s помилок."
 
 #. translators: %s: Codex URL
-#: wp-admin/about.php:243
+#: wp-admin/about.php:65 wp-admin/about.php:251
 msgid "For more information, see <a href=\"%s\">the release notes</a>."
 msgstr "Більше інформації можна отримати з <a href=\"%s\">деталей випуску</a>."
 
 #. translators: 1: WordPress version number, 2: plural number of bugs. More
 #. than one security issue.
-#: wp-admin/about.php:239
+#: wp-admin/about.php:63 wp-admin/about.php:247
 msgid "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed some security issues and fixed %2$s bugs."
 msgstr[0] "У <strong>версії %1$s</strong> виправлено декілька проблем безпеки та %2$s помилку."
@@ -5305,7 +5305,7 @@ msgstr[1] "У <strong>версії %1$s</strong> виправлено декіл
 msgstr[2] "У <strong>версії %1$s</strong> виправлено декілька проблем безпеки та %2$s помилок."
 
 #. translators: 1: WordPress version number, 2: plural number of bugs.
-#: wp-admin/about.php:231
+#: wp-admin/about.php:239
 msgid "<strong>Version %1$s</strong> addressed %2$s bug."
 msgid_plural "<strong>Version %1$s</strong> addressed %2$s bugs."
 msgstr[0] "У <strong>версії %1$s</strong> виправлено %2$s помилку."
@@ -5316,7 +5316,7 @@ msgstr[2] "У <strong>версії %1$s</strong> виправлено %2$s по�
 msgid "Welcome to your WordPress Dashboard! This is the screen you will see when you log in to your site, and gives you access to all the site management features of WordPress. You can get help for any screen by clicking the Help tab above the screen title."
 msgstr "Ласкаво просимо до вашої Майстерні WordPress! Це розділ, який ви будете бачити, коли увійдете на свій сайт. Звідси є доступ до всіх елементів керування сайтом. Ви можете отримати допомогу по будь-якому розділу, натиснувши вкладку \"Допомога\" над заголовком розділу."
 
-#: wp-admin/about.php:222
+#: wp-admin/about.php:62 wp-admin/about.php:230
 msgid "Maintenance and Security Release"
 msgstr "Випуск обслуговування та безпеки"
 
@@ -5324,16 +5324,16 @@ msgstr "Випуск обслуговування та безпеки"
 msgid "What&#8217;s New"
 msgstr "Що нового"
 
-#: wp-admin/about.php:219
+#: wp-admin/about.php:227
 msgid "Security Release"
 msgstr "Випуск безпеки"
 
-#: wp-admin/about.php:216
+#: wp-admin/about.php:224
 msgid "Maintenance Release"
 msgstr "Випуск обслуговування"
 
 #. translators: %s: WordPress version number
-#: wp-admin/about.php:228
+#: wp-admin/about.php:236
 msgid "<strong>Version %s</strong> addressed some security issues."
 msgstr "У <strong>версії %s</strong> виправлено декілька проблем безпеки."
 
@@ -5341,7 +5341,7 @@ msgstr "У <strong>версії %s</strong> виправлено декільк�
 msgid "This screen allows you to choose your permalink structure. You can choose from common settings or create custom URL structures."
 msgstr "Цей розділ дозволяє вам обирати структуру постійних посилань. Ви можете обрати один із запропонованих варіантів, або створити користувацьку структуру URL."
 
-#: wp-admin/about.php:202
+#: wp-admin/about.php:210
 msgid "Return to Updates"
 msgstr "Повернутися до поновлень"
 
@@ -5625,11 +5625,11 @@ msgstr "Схоже, для виклику функції add_meta_box() був �
 msgid "Welcome to WordPress %s"
 msgstr "Ласкаво просимо до WordPress %s"
 
-#: wp-admin/about.php:205
+#: wp-admin/about.php:213
 msgid "Go to Dashboard &rarr; Home"
 msgstr "Перейти до \"Майстерні\" &rarr; \"Домашня сторінка\""
 
-#: wp-admin/about.php:202
+#: wp-admin/about.php:210
 msgid "Return to Dashboard &rarr; Updates"
 msgstr "Повернутися до \"Майстерні\" &rarr; \"Оновлення\""
 
@@ -5637,7 +5637,7 @@ msgstr "Повернутися до \"Майстерні\" &rarr; \"Оновле
 msgid "WordPress is created by a worldwide team of passionate individuals."
 msgstr "WordPress створено міжнародною командою пристрасних особистостей."
 
-#: wp-admin/about.php:124
+#: wp-admin/about.php:132
 msgid "Under the Hood"
 msgstr "Під капотом"
 
@@ -7515,7 +7515,7 @@ msgstr[0] "Необхідно <span class=\"count\">(%s)</span>"
 msgstr[1] "Необхідно <span class=\"count\">(%s)</span>"
 msgstr[2] "Необхідно <span class=\"count\">(%s)</span>"
 
-#: wp-admin/about.php:205
+#: wp-admin/about.php:213
 msgid "Go to Dashboard"
 msgstr "Перейти до майстерні"
 
@@ -9611,6 +9611,7 @@ msgstr "Повернутися до сторінки тем"
 
 #: wp-admin/includes/class-file-upload-upgrader.php:60
 #: wp-admin/includes/class-file-upload-upgrader.php:94
+#: wp-admin/includes/class-file-upload-upgrader.php:107
 msgid "Please select a file"
 msgstr "Будь ласка, оберіть файл"
 

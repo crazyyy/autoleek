@@ -2,7 +2,7 @@
 # This file is distributed under the same license as the 4.6.x package.
 msgid ""
 msgstr ""
-"PO-Revision-Date: 2016-08-16 23:27:10+0000\n"
+"PO-Revision-Date: 2016-09-26 14:31:53+0000\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -290,7 +290,7 @@ msgstr "&larr; Назад до %s"
 msgid "Network Activate"
 msgstr "Увімкнути для мережі"
 
-#: wp-includes/wp-db.php:1782 wp-includes/wp-db.php:1788
+#: wp-includes/wp-db.php:1797 wp-includes/wp-db.php:1803
 msgid "Unable to retrieve the error message from MySQL"
 msgstr "Неможливо отримати текст помилки від MySQL"
 
@@ -597,13 +597,13 @@ msgstr "Вибрати лого"
 msgid "No logo selected"
 msgstr "Лого не обрано"
 
-#: wp-includes/functions.php:5122
+#: wp-includes/functions.php:5123
 msgid "Close dialog"
 msgstr "Закрити вікно"
 
 #. translators: 1: PHP class name, 2: PHP parent class name, 3: version number,
 #. 4: __construct() method
-#: wp-includes/functions.php:3765
+#: wp-includes/functions.php:3766
 msgid "The called constructor method for %1$s in %2$s is <strong>deprecated</strong> since version %3$s! Use %4$s instead."
 msgstr "Викликаний метод конструктора для %1$s у %2$s <strong>застарілий</strong> із версії %3$s! Натомість використовуйте %4$s."
 
@@ -733,12 +733,12 @@ msgstr "https://codex.wordpress.org/Debugging_a_WordPress_Network"
 msgid "Read the <a href=\"%s\" target=\"_blank\">bug report</a> page. Some of the guidelines there may help you figure out what went wrong."
 msgstr "Прочитайте сторінку <a href=\"%s\" target=\"_blank\">звіту про помилку</a>. Деякі поради там можуть допомогти вам зрозуміти що пішло не так."
 
-#: wp-includes/functions.php:3993
+#: wp-includes/functions.php:3994
 msgid "https://codex.wordpress.org/Debugging_in_WordPress"
 msgstr "https://codex.wordpress.org/Debugging_in_WordPress"
 
 #. translators: %s: Codex URL
-#: wp-includes/functions.php:3992
+#: wp-includes/functions.php:3993
 msgid "Please see <a href=\"%s\">Debugging in WordPress</a> for more information."
 msgstr "Будь ласка, перегляньте <a href=\"%s\">Виправлення помилок у WordPress</a> для більш детальної інформації."
 
@@ -947,66 +947,66 @@ msgstr "Оприлюднений заголовок:"
 msgid "Author:"
 msgstr "Автор:"
 
-#: wp-includes/wp-db.php:1576 wp-includes/wp-db.php:1679
+#: wp-includes/wp-db.php:1591 wp-includes/wp-db.php:1694
 msgid "Are you sure that the database server is running?"
 msgstr "Ви впевнені, що сервер бази даних працює?"
 
-#: wp-includes/wp-db.php:1670
+#: wp-includes/wp-db.php:1685
 msgid "Error reconnecting to the database"
 msgstr "Помилка при повторному з’єднанні з базою даних"
 
-#: wp-includes/wp-db.php:1575
+#: wp-includes/wp-db.php:1590
 msgid "Are you sure that you have typed the correct hostname?"
 msgstr "Ви впевнені, що ввели правильну адресу сервера?"
 
 #. translators: %s: support forums URL
-#: wp-includes/wp-db.php:1581 wp-includes/wp-db.php:1685
+#: wp-includes/wp-db.php:1596 wp-includes/wp-db.php:1700
 msgid "If you&#8217;re unsure what these terms mean you should probably contact your host. If you still need help you can always visit the <a href=\"%s\">WordPress Support Forums</a>."
 msgstr "Якщо ви не впевнені що означають ці вирази, ви можете зв’язатися зі своїм хостинг-провайдером. Також ви завжди можете відвідати <a href=\"%s\">Форуми підтримки WordPress</a>."
 
 #. translators: %s: database host
-#: wp-includes/wp-db.php:1674
+#: wp-includes/wp-db.php:1689
 msgid "This means that we lost contact with the database server at %s. This could mean your host&#8217;s database server is down."
 msgstr "Це означає, що втрачено зв’язок із сервером бази даних %s. Це може означати, що сервер баз даних вашого хостинг-провайдера не працює."
 
-#: wp-includes/wp-db.php:1680
+#: wp-includes/wp-db.php:1695
 msgid "Are you sure that the database server is not under particularly heavy load?"
 msgstr "Ви впевнені, що сервер бази даних не перевантажений?"
 
-#: wp-includes/wp-db.php:1574
+#: wp-includes/wp-db.php:1589
 msgid "Are you sure you have the correct username and password?"
 msgstr "Ви впевнені, що маєте правильне ім’я користувача та пароль?"
 
 #. translators: 1: wp-config.php. 2: database host
-#: wp-includes/wp-db.php:1568
+#: wp-includes/wp-db.php:1583
 msgid "This either means that the username and password information in your %1$s file is incorrect or we can&#8217;t contact the database server at %2$s. This could mean your host&#8217;s database server is down."
 msgstr "Це означає, що ім’я користувача чи пароль у вашому файлі %1$s неправильні, або неможливо встановити зв’язок із сервером бази даних %2$s. Це також може означати, що сервер баз даних вашого хостинг-провайдера не працює."
 
 #. translators: %s: support forums URL
-#: wp-includes/wp-db.php:1113
+#: wp-includes/wp-db.php:1128
 msgid "If you don&#8217;t know how to set up a database you should <strong>contact your host</strong>. If all else fails you may find help at the <a href=\"%s\">WordPress Support Forums</a>."
 msgstr "Якщо ви не знаєте як встановити базу даних, вам варто <strong>зв’язатися зі своїм хостинг-провайдером</strong>. Також ви можете знайти допомогу на <a href=\"%s\">Форумах підтримки WordPress</a>."
 
 #. translators: 1: database user, 2: database name
-#: wp-includes/wp-db.php:1098
+#: wp-includes/wp-db.php:1113
 msgid "Does the user %1$s have permission to use the %2$s database?"
 msgstr "Користувач %1$s має дозвіл використовувати базу даних %2$s?"
 
-#: wp-includes/wp-db.php:1094
+#: wp-includes/wp-db.php:1109
 msgid "Are you sure it exists?"
 msgstr "Ви впевнені, що це існує?"
 
-#: wp-includes/wp-db.php:1085
+#: wp-includes/wp-db.php:1100
 msgid "Can&#8217;t select database"
 msgstr "Не вдалося обрати базу даних"
 
 #. translators: %s: database name
-#: wp-includes/wp-db.php:1089
+#: wp-includes/wp-db.php:1104
 msgid "We were able to connect to the database server (which means your username and password is okay) but not able to select the %s database."
 msgstr "Зв’язатися з сервером бази даних вдалося (що означає, що ім’я користувача та пароль вірні), але не вдалося обрати базу даних %s."
 
 #. translators: %s: database name
-#: wp-includes/wp-db.php:1105
+#: wp-includes/wp-db.php:1120
 msgid "On some systems the name of your database is prefixed with your username, so it would be like <code>username_%1$s</code>. Could that be the problem?"
 msgstr "На деяких системах префікс назви вашої бази даних це ваше ім’я користувача, тобто в результаті буде щось на кшталт <code>username_%1$s</code>. Це може бути проблемою?"
 
@@ -1545,7 +1545,7 @@ msgstr "Додати до меню: %1$s (%2$s)"
 msgid "When starting a new paragraph with one of these formatting shortcuts followed by a space, the formatting will be applied automatically. Press Backspace or Escape to undo."
 msgstr "Коли новий параграф починається одним із цих скорочень форматування та пробілом, форматування застосується автоматично. Натисніть \"Backspace\", або \"Escape\", щоби скасувати."
 
-#: wp-includes/wp-db.php:1366 wp-includes/wp-db.php:1383
+#: wp-includes/wp-db.php:1381 wp-includes/wp-db.php:1398
 msgid "WordPress database error:"
 msgstr "Помилка бази даних WordPress:"
 
@@ -1634,7 +1634,7 @@ msgid "Menus can be displayed in locations defined by your theme or in <a href=\
 msgstr "Меню можуть відображатися у місцях, визначених вашою темою, або в <a href=\"%s\">областях віджетів</a>, за допомогою віджета \"Користувацьке меню\"."
 
 #. translators: 1: PHP class name, 2: version number, 3: __construct() method
-#: wp-includes/functions.php:3769
+#: wp-includes/functions.php:3770
 msgid "The called constructor method for %1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
 msgstr "Викликаний для %1$s конструкторський метод <strong>застарілий</strong> із версії %2$s! Використовуйте %3$s."
 
@@ -2036,7 +2036,7 @@ msgstr "Відношення (XFN)"
 msgid "CSS Classes"
 msgstr "Клас CSS"
 
-#: wp-includes/class-wp-editor.php:1431
+#: wp-includes/class-wp-editor.php:1439
 #: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:105
 #: wp-includes/media-template.php:1001
 msgid "Open link in a new tab"
@@ -2378,7 +2378,7 @@ msgid "Select Post"
 msgstr "Обрати запис"
 
 #: wp-includes/class-wp-customize-nav-menus.php:788
-#: wp-includes/class-wp-editor.php:1426 wp-includes/media-template.php:813
+#: wp-includes/class-wp-editor.php:1434 wp-includes/media-template.php:813
 msgid "Link Text"
 msgstr "Текст посилання"
 
@@ -2470,7 +2470,7 @@ msgstr "Ви маєте передати масив типів"
 
 #. translators: %s: database access abstraction class, usually wpdb or a class
 #. extending wpdb
-#: wp-includes/wp-db.php:1165
+#: wp-includes/wp-db.php:1180
 msgid "%s must set a database connection for use with escaping."
 msgstr "%s повинна встановлювати зв'язок з базою данх для використання з службовими символами."
 
@@ -2823,7 +2823,7 @@ msgstr "Потік"
 msgid "Your browser does not support direct access to the clipboard. Please use keyboard shortcuts or your browser&#8217;s edit menu instead."
 msgstr "Ваш браузер не підтримує прямий доступ до буферу обміну. Будь ласка, використовуйте гарячі клавіші або меню редагування вашого браузера&#8217;s ."
 
-#: wp-includes/class-wp-editor.php:1452
+#: wp-includes/class-wp-editor.php:1460
 msgid "Search or use up and down arrow keys to select an item."
 msgstr "Використовуйте клавіші  зі стрілками вниз і у верх, щоб вибрати пункт."
 
@@ -3428,7 +3428,7 @@ msgstr "Субтитри не вказані."
 msgid "Invalid menu ID."
 msgstr "Невірний ID меню."
 
-#: wp-includes/wp-db.php:1281
+#: wp-includes/wp-db.php:1296
 msgid "The query argument of %s must have a placeholder."
 msgstr "Аргумент запиту методу %s повинен містити описувач перетворений."
 
@@ -3562,8 +3562,8 @@ msgstr "Стиль"
 msgid "Keywords"
 msgstr "Ключові слова"
 
-#: wp-includes/admin-bar.php:147 wp-includes/wp-db.php:1114
-#: wp-includes/wp-db.php:1582 wp-includes/wp-db.php:1686 wp-login.php:801
+#: wp-includes/admin-bar.php:147 wp-includes/wp-db.php:1129
+#: wp-includes/wp-db.php:1597 wp-includes/wp-db.php:1701 wp-login.php:801
 msgid "https://wordpress.org/support/"
 msgstr "https://wordpress.org/support/"
 
@@ -3967,7 +3967,7 @@ msgstr "Не вдалося перевірити SSL-сертифікат сер
 
 #: wp-includes/media-template.php:644
 msgid "Embed Media Player"
-msgstr "Код медіа плеєру"
+msgstr "Вставити програвач медіа"
 
 #: wp-includes/media-template.php:350 wp-includes/media-template.php:526
 msgid "Length:"
@@ -4117,7 +4117,7 @@ msgstr "%2$s %1$s %3$s о %4$s:%5$s"
 msgid "The site you were looking for, %s, does not exist, but you can create it now!"
 msgstr "Сайт, який ви шукали, %s, не існує, але ви можете створити його зараз!"
 
-#: wp-includes/functions.php:5135
+#: wp-includes/functions.php:5136
 msgid "The login page will open in a new window. After logging in you can close it and return to this page."
 msgstr "Сторінка входу відкриється в новому вікні. Після авторизації ви можете закрити її і повернутись сюди."
 
@@ -4147,7 +4147,7 @@ msgctxt "submit button"
 msgid "Search"
 msgstr "Шукати"
 
-#: wp-includes/functions.php:5133 wp-includes/script-loader.php:461
+#: wp-includes/functions.php:5134 wp-includes/script-loader.php:461
 msgid "Session expired"
 msgstr "Сесія закінчилась"
 
@@ -5232,12 +5232,12 @@ msgstr "Форум підтримки"
 msgid "&hellip;"
 msgstr "&hellip;"
 
-#: wp-includes/functions.php:3642
+#: wp-includes/functions.php:3643
 msgid "Database Error"
 msgstr "Помилка бази даних"
 
-#: wp-includes/functions.php:3646 wp-includes/ms-load.php:471
-#: wp-includes/wp-db.php:1564
+#: wp-includes/functions.php:3647 wp-includes/ms-load.php:471
+#: wp-includes/wp-db.php:1579
 msgid "Error establishing a database connection"
 msgstr "Виникла помилка під час з&#8217;єднання з базою даних"
 
@@ -5372,7 +5372,7 @@ msgstr "Панель інструментів"
 msgid "Destination directory for file streaming does not exist or is not writable."
 msgstr "Каталог призначення для файлового потоку не існує або недоступний для запису."
 
-#: wp-includes/class-http.php:532
+#: wp-includes/class-http.php:535
 msgid "There are no HTTP transports available which can complete the requested request."
 msgstr "Немає жодного доступного HTTP-транспорту, який може завершити запит."
 
@@ -5381,11 +5381,11 @@ msgctxt "post format"
 msgid "Format"
 msgstr "Формат"
 
-#: wp-includes/class-wp-editor.php:1420
+#: wp-includes/class-wp-editor.php:1428
 msgid "Enter the destination URL"
 msgstr "Введіть URL призначення"
 
-#: wp-includes/class-wp-editor.php:1434
+#: wp-includes/class-wp-editor.php:1442
 msgid "Or link to existing content"
 msgstr "Або прив’язати до існуючого вмісту"
 
@@ -5409,11 +5409,11 @@ msgstr "Умовні теґи запитів не працюють до здій
 msgid "The user is already active."
 msgstr "Цей користувач вже активний."
 
-#: wp-includes/functions.php:3995
+#: wp-includes/functions.php:3996
 msgid "%1$s was called <strong>incorrectly</strong>. %2$s %3$s"
 msgstr "Функція %1$s викликана <strong>невірно</strong>. %2$s %3$s"
 
-#: wp-includes/functions.php:3990
+#: wp-includes/functions.php:3991
 msgid "(This message was added in version %s.)"
 msgstr "(Це повідомлення додане у версії %s.)"
 
@@ -5445,7 +5445,7 @@ msgstr "Аудіо"
 msgid "Invalid post format"
 msgstr "Невірний формат запису"
 
-#: wp-includes/class-wp-editor.php:1451
+#: wp-includes/class-wp-editor.php:1459
 msgid "No search term specified. Showing recent items."
 msgstr "Пошуковий запит не вказано. Відображено недавні елементи"
 
@@ -6311,11 +6311,11 @@ msgstr "Пінґбек від %1$s на %2$s зареєстровано. Доз�
 msgid "The specified target URL does not exist."
 msgstr "Зазначений URL не існує."
 
-#: wp-includes/wp-db.php:1352
+#: wp-includes/wp-db.php:1367
 msgid "WordPress database error %1$s for query %2$s made by %3$s"
 msgstr "Помилка БД WordPress %1$s для запиту %2$s спричинена %3$s"
 
-#: wp-includes/wp-db.php:1354
+#: wp-includes/wp-db.php:1369
 msgid "WordPress database error %1$s for query %2$s"
 msgstr "Помилка БД WordPress  %1$s для запиту%2$s"
 
@@ -6438,25 +6438,9 @@ msgstr "Yahoo IM"
 msgid "Jabber / Google Talk"
 msgstr "Jabber / Google Talk"
 
-#: wp-includes/comment.php:636 wp-includes/comment.php:638
-msgid "Duplicate comment detected; it looks as though you&#8217;ve already said that!"
-msgstr "Подвійний коментар — схоже на те, що Ви вже це казали!"
-
 #: wp-includes/comment.php:1938
 msgid "Could not update comment status"
 msgstr "Неможливо оновити статус коментаря"
-
-#: wp-includes/cron.php:398
-msgid "Once Hourly"
-msgstr "Щогодинно"
-
-#: wp-includes/cron.php:399
-msgid "Twice Daily"
-msgstr "Щоденно"
-
-#: wp-includes/cron.php:400
-msgid "Once Daily"
-msgstr "Щоденно"
 
 #: wp-includes/widgets/class-wp-widget-links.php:142
 #: wp-includes/widgets/class-wp-widget-pages.php:135
@@ -6479,25 +6463,9 @@ msgstr "ID сторінки"
 msgid "Exclude:"
 msgstr "Виключити:"
 
-#: wp-includes/widgets/class-wp-widget-links.php:152
-msgid "Show Link Image"
-msgstr "Показати посилання на зображення"
-
-#: wp-includes/widgets/class-wp-widget-links.php:154
-msgid "Show Link Name"
-msgstr "Показати ім’я посилання"
-
 #: wp-includes/widgets/class-wp-widget-links.php:156
 msgid "Show Link Description"
 msgstr "Показати опис посилання"
-
-#: wp-includes/widgets/class-wp-widget-links.php:158
-msgid "Show Link Rating"
-msgstr "Показати посилання рейтингу"
-
-#: wp-includes/widgets/class-wp-widget-archives.php:82
-msgid "Select Month"
-msgstr "Вибрати місяць"
 
 #: wp-includes/widgets/class-wp-widget-calendar.php:41
 msgid "Calendar"
@@ -6596,17 +6564,17 @@ msgstr "&laquo; Назад"
 msgid "WordPress &rsaquo; Error"
 msgstr "WordPress &rsaquo; Помилка"
 
-#: wp-includes/functions.php:3706 wp-includes/functions.php:3830
-#: wp-includes/functions.php:3945
+#: wp-includes/functions.php:3707 wp-includes/functions.php:3831
+#: wp-includes/functions.php:3946
 msgid "%1$s is <strong>deprecated</strong> since version %2$s! Use %3$s instead."
 msgstr "%1$s <strong>відхилено</strong> починаючи з версії %2$s! Використовуйте %3$s натомість."
 
-#: wp-includes/functions.php:3708 wp-includes/functions.php:3832
-#: wp-includes/functions.php:3947
+#: wp-includes/functions.php:3709 wp-includes/functions.php:3833
+#: wp-includes/functions.php:3948
 msgid "%1$s is <strong>deprecated</strong> since version %2$s with no alternative available."
 msgstr "%1$s <strong>відхилено</strong> починаючи з версії %2$s без альтернативних варіантів."
 
-#: wp-includes/functions.php:4484
+#: wp-includes/functions.php:4485
 msgid "Select a city"
 msgstr "Оберіть місто"
 
@@ -6655,7 +6623,7 @@ msgstr "%1$s %2$s %3$s Канал категорії"
 msgid "%1$s %2$s %3$s Tag Feed"
 msgstr "%1$s %2$s %3$s Канал теґу"
 
-#: wp-includes/class-http.php:963 wp-includes/class-wp-http-curl.php:232
+#: wp-includes/class-http.php:966 wp-includes/class-wp-http-curl.php:232
 #: wp-includes/class-wp-http-curl.php:271
 msgid "Too many redirects."
 msgstr "Занадто багато перенаправлень."
@@ -7254,11 +7222,11 @@ msgstr "%1$s %2$s Канал коментарів"
 msgid "%1$s %2$s Feed"
 msgstr "%1$s %2$s стрічка"
 
-#: wp-includes/functions.php:3892
+#: wp-includes/functions.php:3893
 msgid "%1$s was called with an argument that is <strong>deprecated</strong> since version %2$s with no alternative available."
 msgstr "%1$s <strong>відхилено</strong> починаючи з версії %2$s без альтернативних варіантів."
 
-#: wp-includes/functions.php:3890
+#: wp-includes/functions.php:3891
 msgid "%1$s was called with an argument that is <strong>deprecated</strong> since version %2$s! %3$s"
 msgstr "%1$s <strong>відхилено</strong> починаючи з версії %2$s! Використовуйте %3$s натомість."
 
@@ -7270,7 +7238,7 @@ msgstr "« Назад"
 msgid "&lt; Prev"
 msgstr "« Назад"
 
-#: wp-includes/wp-db.php:3197
+#: wp-includes/wp-db.php:3212
 msgid "<strong>ERROR</strong>: WordPress %1$s requires MySQL %2$s or higher"
 msgstr "<strong>ПОМИЛКА</strong>: WordPress %1$s потребує MySQL %2$s або вище"
 
@@ -7307,7 +7275,7 @@ msgstr "Зображення"
 msgid "Insert link"
 msgstr "Вставити посилання"
 
-#: wp-includes/class-wp-editor.php:936 wp-includes/class-wp-editor.php:1416
+#: wp-includes/class-wp-editor.php:936 wp-includes/class-wp-editor.php:1424
 #: wp-includes/script-loader.php:419
 msgid "Insert/edit link"
 msgstr "Вставити/редагувати посилання"
@@ -7320,7 +7288,7 @@ msgstr "Востаннє оновлено"
 msgid "Link Rel"
 msgstr "Rel посилання"
 
-#: wp-includes/functions.php:4537
+#: wp-includes/functions.php:4538
 msgid "Manual Offsets"
 msgstr "Ручні налаштування"
 
@@ -7336,7 +7304,7 @@ msgstr "Вперед »"
 msgid "Page IDs, separated by commas."
 msgstr "ID сторінок, розділені комою."
 
-#: wp-includes/functions.php:5134 wp-includes/user.php:280
+#: wp-includes/functions.php:5135 wp-includes/user.php:280
 msgid "Please log in again."
 msgstr "Будь ласка, зайдіть ще раз."
 
@@ -7397,7 +7365,7 @@ msgstr "з"
 msgid "[%1$s] Please moderate: \"%2$s\""
 msgstr "[%1$s] Узгодьте, будь ласка: \"%2$s\""
 
-#: wp-includes/functions.php:4529 wp-includes/functions.php:4533
+#: wp-includes/functions.php:4530 wp-includes/functions.php:4534
 msgid "UTC"
 msgstr "UTC"
 
@@ -7855,6 +7823,38 @@ msgstr "Приватно: %s"
 msgid "Saving Draft&#8230;"
 msgstr "Збереження чернетки&#8230;"
 
+#: wp-includes/comment.php:636 wp-includes/comment.php:638
+msgid "Duplicate comment detected; it looks as though you&#8217;ve already said that!"
+msgstr "Помічено подвійний коментар; схоже на те, що ви вже це казали!"
+
+#: wp-includes/cron.php:399
+msgid "Twice Daily"
+msgstr "Двічі на день"
+
+#: wp-includes/cron.php:398
+msgid "Once Hourly"
+msgstr "Раз у годину"
+
+#: wp-includes/cron.php:400
+msgid "Once Daily"
+msgstr "Раз на день"
+
+#: wp-includes/widgets/class-wp-widget-links.php:152
+msgid "Show Link Image"
+msgstr "Показати зображення посилання"
+
+#: wp-includes/widgets/class-wp-widget-links.php:154
+msgid "Show Link Name"
+msgstr "Показати назву посилання"
+
+#: wp-includes/widgets/class-wp-widget-links.php:158
+msgid "Show Link Rating"
+msgstr "Показати оцінку посилання"
+
+#: wp-includes/widgets/class-wp-widget-archives.php:82
+msgid "Select Month"
+msgstr "Обрати місяць"
+
 #: wp-includes/class-wp-theme.php:782
 msgid "Blue"
 msgstr "Блакитний"
@@ -7962,7 +7962,7 @@ msgid "Website"
 msgstr "Сайт"
 
 #: wp-includes/admin-bar.php:736 wp-includes/class-wp-customize-widgets.php:418
-#: wp-includes/functions.php:3583
+#: wp-includes/functions.php:3584
 msgid "Widgets"
 msgstr "Віджети"
 
@@ -8002,14 +8002,6 @@ msgstr "Немає категорій"
 #: wp-includes/comment-template.php:1707
 msgid "Log in to leave a Comment"
 msgstr "Увійдіть, щоб залишити коментар"
-
-#: wp-includes/comment-template.php:1867 wp-includes/comment-template.php:2226
-msgid "Leave a Reply"
-msgstr "Напишіть відгук"
-
-#: wp-includes/comment-template.php:1868 wp-includes/comment-template.php:2227
-msgid "Leave a Reply to %s"
-msgstr "Написати відповідь до %s"
 
 #. translators: 1: comment date, 2: comment time
 #: wp-includes/class-walker-comment.php:286
@@ -8206,6 +8198,14 @@ msgstr "Налаштування"
 msgid "Plugin:"
 msgstr "Плагін:"
 
+#: wp-includes/comment-template.php:1867 wp-includes/comment-template.php:2226
+msgid "Leave a Reply"
+msgstr "Залишити відповідь"
+
+#: wp-includes/comment-template.php:1868 wp-includes/comment-template.php:2227
+msgid "Leave a Reply to %s"
+msgstr "Залишити відповідь до %s"
+
 #: wp-includes/category-template.php:566
 #: wp-includes/theme-compat/sidebar.php:97
 #: wp-includes/widgets/class-wp-widget-categories.php:31
@@ -8242,7 +8242,7 @@ msgid "Author"
 msgstr "Автор"
 
 #: wp-includes/class-wp-customize-nav-menus.php:784
-#: wp-includes/class-wp-editor.php:1422
+#: wp-includes/class-wp-editor.php:1430
 #: wp-includes/customize/class-wp-customize-nav-menu-item-control.php:91
 #: wp-includes/media-template.php:371 wp-includes/media-template.php:550
 #: wp-includes/media.php:3351
@@ -8276,7 +8276,7 @@ msgstr "Зберегти"
 msgid "OK"
 msgstr "Добре"
 
-#: wp-includes/class-wp-editor.php:871 wp-includes/class-wp-editor.php:1463
+#: wp-includes/class-wp-editor.php:871 wp-includes/class-wp-editor.php:1471
 #: wp-includes/media.php:3355 wp-includes/script-loader.php:406
 #: wp-includes/script-loader.php:456 wp-includes/script-loader.php:531
 msgid "Cancel"
@@ -8321,14 +8321,6 @@ msgstr "Неправильний тип файлу"
 msgid "Recent Comments"
 msgstr "Останні коментарі"
 
-#: wp-includes/comment-template.php:1083
-msgid "Pingback"
-msgstr "Пінґбек"
-
-#: wp-includes/comment-template.php:1082
-msgid "Trackback"
-msgstr "Трекбек"
-
 #: wp-includes/widgets.php:1236
 msgid "<strong>RSS Error</strong>: %s"
 msgstr "<strong>Помилка RSS</strong>: %s"
@@ -8336,10 +8328,6 @@ msgstr "<strong>Помилка RSS</strong>: %s"
 #: wp-includes/widgets/class-wp-widget-rss.php:74
 msgid "Unknown Feed"
 msgstr "Невідомий канал"
-
-#: wp-includes/widgets.php:175
-msgid "Sidebar"
-msgstr "Бокова панель"
 
 #: wp-includes/general-template.php:1494
 #: wp-includes/theme-compat/sidebar.php:91
@@ -8406,7 +8394,7 @@ msgid "Alignment"
 msgstr "Вирівнювання"
 
 #: wp-includes/admin-bar.php:810 wp-includes/admin-bar.php:811
-#: wp-includes/class-wp-editor.php:1438 wp-includes/media.php:3353
+#: wp-includes/class-wp-editor.php:1446 wp-includes/media.php:3353
 msgid "Search"
 msgstr "Пошук"
 
@@ -8422,7 +8410,7 @@ msgstr "Зображення"
 msgid "View Page"
 msgstr "Переглянути сторінку"
 
-#: wp-includes/class-wp-editor.php:872 wp-includes/class-wp-editor.php:1417
+#: wp-includes/class-wp-editor.php:872 wp-includes/class-wp-editor.php:1425
 #: wp-includes/script-loader.php:261 wp-includes/script-loader.php:342
 #: wp-includes/script-loader.php:457 wp-includes/script-loader.php:951
 msgid "Close"
@@ -8464,7 +8452,7 @@ msgstr "Повний розмір"
 msgid "Email: %s"
 msgstr "E-mail: %s"
 
-#: wp-includes/class-wp-editor.php:1466 wp-includes/script-loader.php:421
+#: wp-includes/class-wp-editor.php:1474 wp-includes/script-loader.php:421
 msgid "Add Link"
 msgstr "Додати посилання"
 
@@ -8626,6 +8614,18 @@ msgstr "Скасувати"
 msgid "Redo"
 msgstr "Повторити"
 
+#: wp-includes/comment-template.php:1083
+msgid "Pingback"
+msgstr "Сповіщення"
+
+#: wp-includes/comment-template.php:1082
+msgid "Trackback"
+msgstr "Зворотнє посилання"
+
+#: wp-includes/widgets.php:175
+msgid "Sidebar"
+msgstr "Бічна колонка"
+
 #: wp-includes/class-wp-customize-manager.php:349
 #: wp-includes/script-loader.php:458
 msgid "Cheatin&#8217; uh?"
@@ -8663,7 +8663,7 @@ msgstr "Активувати"
 msgid "Pending Review"
 msgstr "До огляду"
 
-#: wp-includes/class-wp-editor.php:1365
+#: wp-includes/class-wp-editor.php:1373
 msgid "Y/m/d"
 msgstr "Y/m/d"
 
