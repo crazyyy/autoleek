@@ -510,7 +510,8 @@ nav {
 
         border: 1px solid #fff;
         border-radius: 50%;
-        &:active {
+        &:active,
+        &:hover {
           background-color: $green;
         }
         &.active {
@@ -573,6 +574,27 @@ nav {
       }
     }
   }
+}
+.home-carousel .owl-controls .owl-nav .owl-prev,
+.home-carousel .owl-controls .owl-nav .owl-next {
+  font-size: 0;
+
+  top: -60px;
+
+  width: 37px;
+  height: 120px;
+
+  background-color: transparent;
+  &:hover {
+    opacity: .8;
+    background-color: transparent;
+  }
+}
+.home-carousel .owl-controls .owl-nav .owl-prev {
+  background-image: url(../img/bg/slider-mobile-left.png);
+}
+.home-carousel .owl-controls .owl-nav .owl-next {
+  background-image: url(../img/bg/slider-mobile-right.png);
 }
 .subscribe-block {
   h6 {
@@ -638,7 +660,7 @@ nav {
   padding: 30px 50px;
 
   background-image: url(../img/bg/pools-block.jpg);
-  text-shadow: 3px 3px 0 #fff;
+  // text-shadow: 3px 3px 0 #fff;
   h6 {
     font-size: 20px;
     font-weight: bold;
@@ -647,26 +669,31 @@ nav {
 
     text-align: center;
 
-    color: #000;
+    color: #fff;
   }
   .wp-polls-ul {
     margin-bottom: 20px;
     li {
       font-size: 16px;
 
-      margin-bottom: 15px;
+      position: relative;
 
-      color: #000;
+      margin-bottom: 15px;
+      padding-left: 20px;
+
+      color: #fff;
     }
     input[type=checkbox],
     input[type=radio] {
-      position: relative;
+      position: absolute;
       top: 5px;
+      left: 0;
     }
   }
   input[name=vote] {
     font-size: 20px;
     font-weight: bold;
+    line-height: 1.4;
 
     width: 200px;
     height: 40px;
@@ -748,9 +775,11 @@ nav {
         &:after {
           display: none;
         }
-        &:hover {
-          background-color: $greenop;
-        }
+      }
+    }
+    &:hover {
+      h3 {
+        background-color: $greenop;
       }
     }
   }
@@ -1485,25 +1514,53 @@ aside {
       }
     }
     &#nav_menu-2 {
+      padding-right: 0;
       padding-bottom: 0;
+      padding-left: 0;
+      h6 {
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+      }
       ul {
-        margin-right: -50px;
-        margin-left: -50px;
-        padding-right: 30px;
-        padding-left: 30px;
         li {
           font-size: 18px;
 
-          margin: 0 0 10px;
+          margin: 0;
+          a {
+            display: block;
+
+            padding-top: 10px;
+            padding-bottom: 10px;
+            padding-left: 10px;
+
+            text-decoration: none;
+
+            color: #0a67ac;
+            &:hover {
+              color: $blue;
+              background-color: $greenop;
+            }
+          }
           > a {
             line-height: 1.8;
 
             @extend .clearfix;
-            img {
+            .menu-ico {
+              position: relative;
+
+              display: block;
               float: left;
 
-              max-width: 40px;
+              width: 40px;
+              height: 32px;
               margin-right: 10px;
+              img {
+                max-width: 100%;
+                max-height: 100%;
+
+                @extend .align-center;
+              }
             }
           }
           &.nav-first-level {
@@ -1524,57 +1581,31 @@ aside {
               display: block;
             }
           }
-          a {
-            text-decoration: none;
-
-            color: #0a67ac;
-          }
-        }
-        .sub-menu {
-          display: none;
-
-          margin-top: 10px;
-          margin-right: -10px;
-          margin-left: -10px;
-          padding-top: 5px;
-          padding-right: 10px;
-          padding-bottom: 1px;
-          padding-left: 35px;
-
-          background-color: #fff;
-          li {
-            font-size: 14px;
-
-            position: relative;
-            &:before {
-              position: absolute;
-              top: 7px;
-              left: -15px;
-
-              @extend .dblock;
-              @include triangle(10px, $blue, right);
-            }
-            &:after {
-              position: absolute;
-              z-index: 0;
-              top: -5px;
-              right: -10px;
-              bottom: -5px;
-              left: -35px;
-
-              display: none;
-
+          &.current-menu-item,
+          &.current-menu-hovered {
+            > a {
+              color: $blue;
               background-color: $greenop;
             }
-            &:hover {
-              &:after {
-                @extend .dblock;
-              }
-              a {
-                position: relative;
-                z-index: 1;
+          }
+          .sub-menu {
+            display: none;
 
-                color: $blue;
+            background-color: #fff;
+            li {
+              font-size: 14px;
+
+              position: relative;
+              a {
+                padding-left: 40px;
+              }
+              &:before {
+                position: absolute;
+                top: 17px;
+                left: 25px;
+
+                @extend .dblock;
+                @include triangle(10px, $blue, right);
               }
             }
           }
@@ -1667,7 +1698,7 @@ footer {
       span {
         display: block;
 
-        padding: 10px 0;
+        padding: 5px 0 10px;
 
         text-transform: none;
       }
@@ -1756,9 +1787,16 @@ footer {
   }
   footer {
     height: 380px;
+    text-align: center;
+  }
+  footer .footer-subscribe form {
+    width: 100%;
   }
   .gototop {
     bottom: 20px;
+  }
+  #nav_menu-2 {
+    display: none;
   }
 }
 
@@ -1886,6 +1924,9 @@ footer {
   }
   .pools-block .wp-polls-ul li {
     margin-bottom: 15px;
+  }
+  footer .footer-subscribe form {
+    width: 100%;
   }
 }
 @media (max-width: 520px) {

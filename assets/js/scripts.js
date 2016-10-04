@@ -3248,13 +3248,14 @@ $(document).ready(function() {
     }
   })
 
+
+
   /** get categories ID by slug */
 
   var allCategoriesAPIUrl = 'http://' + window.location.hostname + '/wp-json/wp/v2/categories';
   $.getJSON(allCategoriesAPIUrl, function(data, status) {
     var categories = data;
   })
-
 
   /** Sidebar Menu */
   var $firstLevelHref = $('#menu-widget-1 .menu-item-has-children').children('a');
@@ -3334,6 +3335,30 @@ $(document).ready(function() {
   $elements.height(maxheight);
   var css = maxheight - 10 + 'px';
   $elementsChild.css('max-height', css);
+}());
+
+(function() {
+  var $elements = $('#menu-widget-1 a img');
+  var maxwidth = 0;
+  $elements.each(function() {
+    if ($(this).width() > maxwidth) {
+      maxwidth = $(this).width();
+    }
+  });
+
+  var wrapper = '<span class="menu-ico" style="width: ' + maxwidth + 'px"></span>';
+
+
+
+  $elements.each(function(index, el, maxwidth) {
+    $(this).wrap(wrapper)
+  });
+
+
+
+
+
+
 }());
 
 function goBack() {
