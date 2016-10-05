@@ -195,12 +195,15 @@ header {
     form {
       position: absolute;
       top: 0;
-      right: 0;
+      right: 50px;
 
       display: none;
+      /* width: 450px; */
 
-      width: 450px;
+      width: 0;
       height: 50px;
+
+      transition: all 1s;
 
       border-radius: 25px;
       input {
@@ -211,7 +214,9 @@ header {
         left: 0;
 
         height: 100%;
+        padding-left: 20px;
 
+        border-color: #fff;
         border-radius: 25px 0 0 25px;
         box-shadow: none;
         &:focus {
@@ -232,8 +237,8 @@ header {
       button,
       span {
         position: absolute;
-        top: 1px;
-        bottom: 1px;
+        top: 0;
+        bottom: 0;
 
         width: 50px;
 
@@ -290,7 +295,7 @@ nav {
       }
       &:hover {
         a {
-          color: $green;
+          color: #17e88d;
         }
       }
     }
@@ -525,12 +530,21 @@ nav {
 
     height: 370px;
     > div {
+      position: relative;
+
+      overflow: hidden;
+
       height: 100%;
     }
     img {
-      width: 100%;
-      max-width: 100%;
-      height: 100%;
+      width: auto;
+      min-width: 100%;
+      max-width: none;
+      height: auto;
+      min-height: 100%;
+      max-height: none;
+
+      @extend .align-center;
     }
     h6 {
       font-size: 24px;
@@ -596,6 +610,12 @@ nav {
 .home-carousel .owl-controls .owl-nav .owl-next {
   background-image: url(../img/bg/slider-mobile-right.png);
 }
+.home-carousel .owl-controls .owl-nav .owl-prev:hover {
+  background-image: url(../img/bg/slider-mobile-left-h.png);
+}
+.home-carousel .owl-controls .owl-nav .owl-next:hover {
+  background-image: url(../img/bg/slider-mobile-right-h.png);
+}
 .subscribe-block {
   h6 {
     font-size: 22px;
@@ -627,6 +647,7 @@ nav {
     input {
       width: 100%;
       height: 100%;
+      padding-top: 3px;
 
       transition: none !important;
 
@@ -646,7 +667,7 @@ nav {
       bottom: 0;
 
       width: 150px;
-      padding-top: 7px;
+      padding-top: 4px;
 
       color: #fff;
       border-radius: 0 2px 2px 0;
@@ -698,6 +719,7 @@ nav {
     width: 200px;
     height: 40px;
     padding: 0;
+    padding-bottom: 7px;
 
     text-align: center;
 
@@ -748,6 +770,7 @@ nav {
       position: relative;
 
       display: block;
+      overflow: hidden;
 
       height: 100%;
 
@@ -755,8 +778,14 @@ nav {
 
       color: #fff;
       img {
-        width: 100%;
-        height: 100%;
+        width: auto;
+        min-width: 100%;
+        max-width: 150%;
+        height: auto;
+        min-height: 100%;
+        max-height: none;
+
+        @extend .align-center.align-center;
       }
       h3 {
         font-size: 14px;
@@ -1062,6 +1091,9 @@ article {
   &.article-cat {
     &:nth-child(5) {
       background-color: red;
+    }
+    p {
+      line-height: 1.4;
     }
   }
   &.error-page {
@@ -1534,12 +1566,14 @@ aside {
             padding-bottom: 10px;
             padding-left: 10px;
 
+            transition: all .2s;
             text-decoration: none;
 
             color: #0a67ac;
             &:hover {
               color: $blue;
-              background-color: $greenop;
+              /* background-color: $greenop; */
+              background-color: #17e88d;
             }
           }
           > a {
@@ -1648,6 +1682,30 @@ footer {
   margin: $footer_margin auto 0;
 
   @include linear-gradient(#0a67ab, #01275f);
+  .copyright,
+  .footer-subscribe {
+    position: relative;
+    &:after {
+      position: absolute;
+      top: 15px;
+      right: 0;
+
+      width: 2px;
+      height: 120px;
+
+      background-image: url(../img/bg/footer-border.png);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @extend .dblock;
+    }
+  }
+  .footer-subscribe {
+    &:after {
+      right: 60px;
+    }
+  }
   .copyright {
     font-size: 12px;
     line-height: 14px;
@@ -1714,6 +1772,9 @@ footer {
 
         border-radius: 0;
       }
+      input {
+        padding-top: 3px;
+      }
       button {
         position: absolute;
         top: 0;
@@ -1740,6 +1801,14 @@ footer {
 @import 'fonts/font_roboto';
 @import 'base64';
 @import 'import/print';
+@media (min-width: 1201px) {
+  header .searcher .search-from-container {
+    float: right;
+  }
+  footer .footer-subscribe form {
+    max-width: 350px;
+  }
+}
 
 @media (max-width: 1200px) {
   header {
@@ -1751,6 +1820,9 @@ footer {
   }
   footer {
     height: 180px;
+  }
+  footer .copyright:after, footer .footer-subscribe:after {
+    height: 150px;
   }
 }
 @media (max-width: 1020px) {
@@ -1787,15 +1859,28 @@ footer {
   }
   footer {
     height: 380px;
+
     text-align: center;
   }
+  footer .footer-subscribe {
+    padding-right: 30px;
+    padding-left: 30px;
+  }
   footer .footer-subscribe form {
-    width: 100%;
+    width: 90%;
+    margin-right: auto;
+    margin-left: auto;
   }
   .gototop {
     bottom: 20px;
   }
   #nav_menu-2 {
+    display: none;
+  }
+  footer .footer-navi ul {
+    padding-left: 0;
+  }
+  footer .copyright:after, footer .footer-subscribe:after {
     display: none;
   }
 }
@@ -1858,7 +1943,7 @@ footer {
     margin-bottom: 20px;
   }
   header {
-    height: 100px;
+    // height: 100px;
     .searcher {
       padding-top: 60px;
       .search-from-container {
@@ -1980,6 +2065,7 @@ footer {
     font-size: 17px;
 
     width: 100px;
+    padding-top: 7px;
     padding-right: 5px;
     padding-left: 5px;
 

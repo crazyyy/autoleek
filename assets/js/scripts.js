@@ -3180,7 +3180,7 @@ $(document).ready(function() {
   $(".home-carousel").owlCarousel({
     loop: true,
     items: 1,
-    autoplay: true,
+    // autoplay: true,
     nav: true,
     navText: ["<", ">"],
     dots: true
@@ -3195,10 +3195,13 @@ $(document).ready(function() {
   $('.searcher .btn-fake-search').on('click', function(event) {
     event.preventDefault();
     $('.searcher form').fadeIn('fast');
+    $('.searcher form').css('width', '450px');
+
   })
   $('.searcher .btn-close').on('click', function(event) {
     event.preventDefault();
     $('.searcher form').fadeOut('fast');
+    $('.searcher form').css('width', '0');
   })
 
   $('form .btn-clear').on('click', function() {
@@ -3248,8 +3251,6 @@ $(document).ready(function() {
     }
   })
 
-
-
   /** get categories ID by slug */
 
   var allCategoriesAPIUrl = 'http://' + window.location.hostname + '/wp-json/wp/v2/categories';
@@ -3292,9 +3293,10 @@ $(document).ready(function() {
     event.preventDefault();
 
     $('article').html('<div class="article-preloader"><div></div></div>');
-    $('#menu-widget-1 .menu-item-has-children li').removeClass('current-menu-ancestor');
-    $('#menu-widget-1 .menu-item-has-children li').removeClass('current-menu-hovered');
-    $('#menu-widget-1 .menu-item-has-children li').removeClass('current-menu-parent');
+    $('.current-menu-hovered').removeClass('current-menu-hovered');
+    $('.current-menu-item').removeClass('current-menu-item');
+    $('.current-menu-parent').removeClass('current-menu-parent');
+    $('.current-menu-ancestor').removeClass('current-menu-ancestor');
     $(this).parent('li').addClass('current-menu-hovered');
 
     // search ID in class
@@ -3345,20 +3347,11 @@ $(document).ready(function() {
       maxwidth = $(this).width();
     }
   });
-
   var wrapper = '<span class="menu-ico" style="width: ' + maxwidth + 'px"></span>';
-
-
 
   $elements.each(function(index, el, maxwidth) {
     $(this).wrap(wrapper)
   });
-
-
-
-
-
-
 }());
 
 function goBack() {

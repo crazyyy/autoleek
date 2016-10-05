@@ -27,7 +27,7 @@
     <div class="container">
       <div class="row">
 
-        <div class="logo col-md-4 col-sm-4 col-xs-5">
+        <div class="logo col-md-4 col-sm-4 col-xs-8">
           <?php if ( is_front_page() && is_home() ){ } else { ?>
             <a href="<?php echo home_url(); ?>">
               <?php  } ?>
@@ -38,7 +38,7 @@
           <?php } ?>
         </div><!-- /logo -->
 
-        <nav class="nav__header col-md-5 col-md-offset-2 col-sm-offset-2 col-xs-offset-1 col-sm-6 col-xs-6" role="navigation">
+        <nav class="nav__header col-md-5 col-md-offset-2 col-sm-offset-2 col-sm-6 col-xs-4" role="navigation">
           <?php wpeHeadNav(); ?>
           <button class="mobile-nav"></button>
           <div class="mobile-nav-container">
