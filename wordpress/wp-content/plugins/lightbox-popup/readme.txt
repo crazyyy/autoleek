@@ -1,10 +1,10 @@
 === Lightbox - Gallery Lightbox ===
 Contributors: wpdevart
 Donate link: http://wpdevart.com/wordpress-lightbox-plugin
-Tags: lightbox, lightbox popup, light box, lightbox gallery, Photoswipe, popup lightbox, lightbox photo, image lightbox, gallery lightbox, video lightbox, Nivo Lightbox, lightbox image, wordpress image lightbox, lightbox message, lightbox message, exit lightbox, Lightbox slider, prettyphoto lightbox, responsive lightbox, lightbox youtube, photo lightbox, WP Lightbox, wordpress lightbox, lightbox effect, Jquery lightbox, style lightbox, wordpress slideshow lightbox, css3 lightbox, lightview, popup box, swipe, popup, popup window, wordpress popup, Responsive Popup, optin popup, popups, exit popup, popup box, full screen popup           
+Tags: lightbox, lightbox popup, light box, lightbox gallery, Photoswipe, popup lightbox, lightbox photo, image lightbox, gallery lightbox, video lightbox, Nivo Lightbox, lightbox image, wordpress image lightbox, lightbox message, lightbox message, exit lightbox, Lightbox slider, prettyphoto lightbox, responsive lightbox, lightbox youtube, photo lightbox, WP Lightbox, wordpress lightbox, lightbox effect, Jquery lightbox, wordpress slideshow lightbox, css3 lightbox, lightview, popup box, swipe, popup, popup window, wordpress popup, Responsive Popup, optin popup, popups, exit popup, popup box, full screen popup           
 Requires at least: 3.4.0
 Tested up to: 4.6.1
-Stable tag: 1.2.5
+Stable tag: 1.2.6
 License: GPLv3
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -153,6 +153,10 @@ Here is an example.
 
 `<a href="https://www.youtube.com/watch?v=mZb_gat5YCY"><img src="http://demo.wpdevart.com/wp-content/uploads/2015/12/121-1024x576.jpg" alt="121" width="474" height="267" class="alignnone size-large wp-image-127" /></a>`
 
+= How should I activate the Lightbox =
+
+You just need to install our plugin and activate it, then Enable it from admin menu and add images, that's all.
+
 = Do I need to pay yearly or monthly for pro version =
 
 No dear users, you need to pay only onece for our pro version.
@@ -271,6 +275,10 @@ We also recommend you to take a look for this useful plugins - [WordPress Coming
 = 1.2.4 =
 
 * Edit admin options.
+
+= 1.2.5 =
+
+* Fixed mistakes in comments.
 
 == Other Notes ==
 

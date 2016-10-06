@@ -393,7 +393,7 @@ class wpdevart_lightbox_admin_menu{
 					</tr>
                     <tr>
 						<td>
-							Popup border width <span title="Type the Popup border width" class="desription_class">?</span>
+							Popup border width <span title="Type the Popup border width(px)" class="desription_class">?</span>
 						</td>
 						<td>
 							<input type="number"  id="popup_border_width" name="popup_border_width"  min="0"  step="1"  value="<?php echo $page_parametrs['popup_border_width'] ?>"/><small>Px</small>					
@@ -401,7 +401,7 @@ class wpdevart_lightbox_admin_menu{
 					</tr>
                     <tr>
 						<td>
-							Popup border radius <span title="Set the Popup border radius" class="desription_class">?</span>
+							Popup border radius <span title="Set the Popup border radius(px)" class="desription_class">?</span>
 						</td>
 						<td>
 							<input type="number"  id="popup_border_radius" name="popup_border_radius"  min="0"  step="1"  value="<?php echo $page_parametrs['popup_border_radius'] ?>"/><small>Px</small>					
@@ -549,7 +549,7 @@ class wpdevart_lightbox_admin_menu{
                     
                		 <tr>
 						<td>
-							Control Button Line Height<span title="Type Control Button Line Height" class="desription_class">?</span>
+							Control Button Line Height<span title="Type Control Button Line Height(px)" class="desription_class">?</span>
 						</td>
 						<td>
 							<input type="number"  id="control_buttons_height" name="control_buttons_height"  min="0"  step="1"  value="<?php echo $page_parametrs['control_buttons_height'] ?>"/>	<small>Px</small>					

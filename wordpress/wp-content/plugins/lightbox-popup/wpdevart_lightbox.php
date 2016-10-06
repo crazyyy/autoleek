@@ -3,7 +3,7 @@
  * Plugin Name: Lightbox - Gallery Lightbox
  * Plugin URI: http://wpdevart.com/wordpress-lightbox-plugin
  * Description: Lightbox WordPress plugin is an high customizable and responsive product for displaying images and videos in popup. WordPress Lightbox plugin is one of the most popular and useful plugins for WordPress websites.
- * Version: 1.2.5
+ * Version: 1.2.6
  * Author: wpdevart
  * License: GNU/GPLv3 http://www.gnu.org/licenses/gpl-3.0.html
  */

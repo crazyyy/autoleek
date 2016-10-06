@@ -59,7 +59,7 @@ body {
         textarea {
           margin-bottom: 10px;
 
-          border: 1px solid $blue;
+          border: 1px solid #0a67ac;
           border-radius: 2px;
           &[name=your-name] {
             width: 50%;
@@ -72,8 +72,8 @@ body {
             border-color: $green;
             background-color: transparent;
             &:hover {
-              color: $blue;
-              border-color: $blue;
+              color: #0a67ac;
+              border-color: #0a67ac;
             }
           }
         }
@@ -295,7 +295,6 @@ nav {
       margin-bottom: 10px;
       a {
         padding: 0 10px;
-        padding-right: 0;
 
         text-decoration: none;
 
@@ -356,8 +355,10 @@ nav {
         left: 0;
 
         width: 96%;
+        padding-bottom: 0;
+        padding-left: 12px;
 
-        color: #fff;
+        color: #7b7474;
         border: 0;
         border-bottom: 1px solid #fff;
         border-radius: 0;
@@ -381,9 +382,11 @@ nav {
       }
     }
     h6 {
+      font-weight: bold;
+
       margin-bottom: 10px;
       padding-bottom: 5px;
-      padding-left: 3px;
+      padding-left: 12px;
 
       color: #fff;
       border-bottom: 1px solid #fff;
@@ -718,7 +721,7 @@ nav {
     input[type=checkbox],
     input[type=radio] {
       position: absolute;
-      top: 5px;
+      top: 3px;
       left: 0;
     }
   }
@@ -752,6 +755,7 @@ nav {
 }
 .populars-block,
 .relative-posts {
+  margin-bottom: 50px;
   .populars-title {
     font-size: 20px;
 
@@ -767,7 +771,7 @@ nav {
 
       height: 2px;
 
-      background-color: $blue;
+      background-color: #0a67ac;
 
       @extend .dblock;
     }
@@ -835,6 +839,18 @@ article {
   &.pagest,
   &.post {
     margin-bottom: 40px;
+    .page-title {
+      font-size: 32px;
+
+      margin-bottom: 20px;
+
+      text-align: center;
+
+      color: #000;
+      &:after {
+        display: none;
+      }
+    }
     a {
       color: $blue;
       &:hover {
@@ -845,15 +861,22 @@ article {
     }
     h1,
     h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      padding-right: 50px;
+      padding-left: 50px;
+    }
+    h1,
+    h2,
     h3, {
       position: relative;
 
       margin-bottom: 15px;
-      padding-right: 40px;
       padding-bottom: 10px;
-      padding-left: 40px;
 
-      color: $blue;
+      color: #0a67ac;
       &:after {
         position: absolute;
         right: 0;
@@ -862,7 +885,7 @@ article {
 
         height: 2px;
 
-        background-color: $blue;
+        background-color: #0a67ac;
 
         @extend .dblock;
       }
@@ -873,8 +896,50 @@ article {
       font-weight: bold;
 
       margin-bottom: 30px;
-      padding-right: 40px;
-      padding-left: 40px;
+    }
+    /*** */
+    /*
+h1,h2,h3,h4,h5,h6,p {
+  &:before {
+    position: relative;
+    @extend .dblock;
+    top: -10px;
+    bottom: -10px;
+    width: 1px;
+    position: absolute;
+    background-color: red;
+  }
+}
+h1,h2,h3,h4,h5,h6 {
+  &:before {
+    background-color: green;
+  }
+}
+*/
+    /*** */
+    h1 {
+      font-size: 32px;
+      line-height: 30px;
+    }
+    h2 {
+      font-size: 27px;
+      line-height: 26px;
+    }
+    h3 {
+      font-size: 24px;
+      line-height: 1;
+    }
+    h4 {
+      font-size: 22px;
+      line-height: 22px;
+    }
+    h5 {
+      font-size: 20px;
+      line-height: 22px;
+    }
+    h6 {
+      font-size: 18px;
+      line-height: 22px;
     }
     img {
       max-width: 100%;
@@ -883,19 +948,31 @@ article {
       font-size: 16px;
       line-height: 22px;
 
-      margin-bottom: 40px;
-      padding-right: 55px;
-      padding-left: 55px;
+      margin-bottom: 25px;
+      padding-right: 50px;
+      padding-left: 50px;
 
       text-align: left;
 
       color: #000;
+      a {
+        color: #0a67ac;
+        background-color: #f0f6fb;
+        &:hover {
+          text-decoration: none;
+
+          color: #00b668;
+          background-color: #e7fdf3;
+        }
+      }
     }
     ul,
     ol {
       padding-right: 40px;
       padding-left: 80px;
       li {
+        line-height: 1.4;
+
         margin-bottom: 10px;
       }
     }
@@ -918,13 +995,14 @@ article {
       }
     }
     ol {
+      padding-left: 90px;
       li {
         &:before {
           font-size: 12px;
           line-height: 1.7;
 
           position: absolute;
-          top: 1px;
+          top: 0;
           left: -30px;
 
           width: 20px;
@@ -1012,13 +1090,16 @@ article {
     blockquote {
       position: relative;
 
-      margin-bottom: 30px;
+      margin-bottom: 40px;
+      padding-top: 10px;
       padding-right: 30px;
       padding-bottom: 30px;
       padding-left: 30px;
 
       text-align: center;
       p {
+        font-size: 18px;
+
         margin-bottom: 0;
 
         text-align: center;
@@ -1038,12 +1119,37 @@ article {
         @extend .dblock;
       }
     }
+    .checkmark {
+      line-height: 1.4;
+
+      position: relative;
+
+      display: block;
+
+      margin: 0 0 10px;
+      padding-left: 80px;
+      &:before {
+        position: absolute;
+        top: 1px;
+        left: 58px;
+
+        width: 13px;
+        height: 16px;
+
+        background-image: url(../img/bg/checkmark.png);
+        background-repeat: no-repeat;
+        background-position: center;
+
+        @extend .dblock;
+      }
+    }
     .content-link {
       display: block;
 
       margin-bottom: 20px;
-      padding-left: 100px;
+      padding: 0;
 
+      text-align: center;
       text-decoration: underline;
 
       color: $blue;
@@ -1085,18 +1191,6 @@ article {
 
         background-image: url(../img/bg/blockquote.png);
       }
-    }
-  }
-  .page-title {
-    font-size: 32px;
-
-    margin-bottom: 20px;
-
-    text-align: center;
-
-    color: #000;
-    &:after {
-      display: none;
     }
   }
   &.article-cat {
@@ -1160,8 +1254,8 @@ article {
       margin-bottom: 20px;
       padding-bottom: 5px;
 
-      color: $blue;
-      border-bottom: 2px solid $blue;
+      color: #0a67ac;
+      border-bottom: 2px solid #0a67ac;
     }
     ul {
       font-size: 16px;
@@ -1490,7 +1584,7 @@ article {
     background-color: $blueop;
   }
   &:hover {
-    .wp-caption-text {
+    .howerable {
       background-color: $greenop;
     }
   }
@@ -1601,7 +1695,7 @@ aside {
             }
             .menu-ico {
               position: absolute;
-              top: 50%;
+              top: 5px;
               left: 15px;
 
               display: block;
@@ -1609,7 +1703,6 @@ aside {
 
               width: 40px;
               height: 32px;
-              margin-top: -16px;
               padding-left: 0;
               img {
                 max-width: 100%;
@@ -1679,7 +1772,7 @@ aside {
 
   position: fixed;
   right: 50px;
-  bottom: 140px;
+  bottom: 160px;
 
   display: none;
 
@@ -1688,12 +1781,48 @@ aside {
 
   text-align: center;
 
-  color: $blue;
-  border: 1px solid $blue;
+  color: #0a67ac;
+  border: 1px solid #0a67ac;
   border-radius: 50%;
   &:hover {
     color: $green;
     border-color: $green;
+  }
+}
+#toc_container {
+  width: 100%;
+  padding: 18px 50px;
+
+  border: 0;
+  background-color: #f0f6fb;
+  p.toc_title {
+    font-size: 18px;
+    font-weight: normal;
+
+    margin-bottom: 18px;
+
+    text-align: left;
+  }
+  a {
+    text-decoration: underline;
+
+    color: #0a67ac;
+    &:hover {
+      text-decoration: none;
+
+      color: $green;
+    }
+  }
+  .toc_list {
+    padding: 0 0 0 40px;
+    li {
+      &:before {
+        width: 5px;
+        height: 5px;
+
+        background-color: #000;
+      }
+    }
   }
 }
 footer {
@@ -1820,7 +1949,13 @@ footer {
     }
   }
 }
-
+.ddsg-wrapper {
+  div {
+    p {
+      display: none;
+    }
+  }
+}
 
 @import 'fonts/font_fontawesome';
 @import 'fonts/font_roboto';
@@ -1849,6 +1984,9 @@ footer {
   footer .copyright:after,
   footer .footer-subscribe:after {
     height: 150px;
+  }
+  .gototop {
+    bottom: 180px;
   }
 }
 @media (max-width: 1020px) {
@@ -1883,6 +2021,35 @@ footer {
       padding-left: 0;
     }
   }
+  article.pagest h1,
+  article.post h1 {
+    font-size: 27px;
+    line-height: 26px;
+  }
+  article.pagest h2,
+  article.post h2 {
+    font-size: 24px;
+    line-height: 1;
+  }
+  article.pagest h3,
+  article.post h3 {
+    font-size: 22px;
+    line-height: 1;
+  }
+  article.pagest h4,
+  article.post h4 {
+    font-size: 22px;
+    line-height: 20px;
+  }
+  article.pagest h5,
+  article.post h5 {
+    font-size: 18px;
+  }
+  article.pagest h6,
+  article.post h6 {
+    font-size: 16px;
+    line-height: 20px;
+  }
   footer {
     height: 380px;
 
@@ -1898,7 +2065,24 @@ footer {
     margin-left: auto;
   }
   .gototop {
+    z-index: 2;
     bottom: 20px;
+    background-color: #fff;
+    &:before {
+      position: absolute;
+      z-index: 1;
+      top: -2px;
+      right: -2px;
+      bottom: -2px;
+      left: -2px;
+
+      display: block;
+
+      content: '';
+
+      border: 1px solid #fff;
+      border-radius: 50%;
+    }
   }
   #nav_menu-2 {
     display: none;
@@ -1911,8 +2095,6 @@ footer {
     display: none;
   }
 }
-
-
 @media (max-width: 845px) {
   header .searcher {
     padding-right: 0;
@@ -1966,6 +2148,30 @@ footer {
   }
   .pools-block input[name=vote] {
     padding-bottom: 6px;
+  }
+  article.pagest h1:after,
+  article.pagest h2:after,
+  article.pagest h3:after,
+  article.post h1:after,
+  article.post h2:after,
+  article.post h3:after {
+    right: 10px;
+    left: 10px;
+  }
+  article.pagest h1,
+  article.post h1,
+  article.pagest h2,
+  article.post h2,
+  article.pagest h3,
+  article.post h3,
+  article.pagest h4,
+  article.post h4,
+  article.pagest h5,
+  article.post h5,
+  article.pagest h6,
+  article.post h6 {
+    padding-right: 10px;
+    padding-left: 10px;
   }
 }
 @media (max-width: 650px) {

@@ -38,7 +38,7 @@ class wpdevart_lightbox_database_params{
 				
 				"popup_border_width"						=>'1',
 				"popup_border_color"						=>'#000000',
-				"popup_border_radius"						=>'20',				
+				"popup_border_radius"						=>'15',				
 
 				
 			),

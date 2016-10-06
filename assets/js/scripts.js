@@ -20,6 +20,75 @@ if (typeof jQuery === 'undefined') {
 } else {
   console.log('jQuery has loaded');
 }
+
+(function() {
+  /** Sidebar Menu */
+  var $firstLevelHref = $('#menu-widget-1 .menu-item-has-children').children('a');
+
+  $firstLevelHref.each(function(index, el) {
+
+    var url = $(this).attr('href');
+    var slug = url.split("/").pop();
+
+    var $this = $(this);
+
+    $this.attr('data-slug', slug)
+
+    var allCategoriesAPIUrl = 'http://' + window.location.hostname + '/wp-json/wp/v2/categories';
+    $.getJSON(allCategoriesAPIUrl, function(data, status) {
+
+      var result = $.grep(data, function(e) {
+        return e.slug == slug;
+      });
+
+      if (result.length == 0) {
+        // not found
+      } else if (result.length == 1) {
+        $this.attr('data-id', result[0].id)
+          // access the foo property using result[0].foo
+      } else {
+        // multiple items found
+      }
+
+    })
+
+  });
+
+  $firstLevelHref.on('click', function(event) {
+    event.preventDefault();
+
+    $('article').html('<div class="article-preloader"><div></div></div>');
+    $('.current-menu-hovered').removeClass('current-menu-hovered');
+    $('.current-menu-item').removeClass('current-menu-item');
+    $('.current-menu-parent').removeClass('current-menu-parent');
+    $('.current-menu-ancestor').removeClass('current-menu-ancestor');
+    $(this).parent('li').addClass('current-menu-hovered');
+
+    // search ID in class
+    var ID = $(this).attr('data-id');
+
+    var workUriCat = 'http://' + window.location.hostname + '/wp-json/wp/v2/categories/' + ID;
+    $.getJSON(workUriCat, function(data, status) {
+      var catName = data.name;
+      $('article').html('<h1 class="cat-title inner-title" style="background-image: url(http://' + window.location.hostname + '/wp-content/themes/wp-autoleek/img/bg/cat-title.jpg);">' + catName + '</h1>')
+    })
+
+    var workUri = 'http://' + window.location.hostname + '/wp-json/acf/v2/term/category/' + ID;
+    $.getJSON(workUri, function(data, status) {
+
+      var description = data.acf.description;
+      $('article').append(description);
+
+      if (data.acf.title_bg) {
+        var bgi = 'url("' + data.acf.title_bg.url + '");';
+        $('article .cat-title').css('background-image', bgi);
+      }
+    })
+
+  })
+}());
+
+
 // Place any jQuery/helper plugins in here.
 /**
  * Owl carousel
@@ -3221,9 +3290,9 @@ $(document).ready(function() {
   });
   $(window).scroll(function() {
     if ($(window).scrollTop() > 1500) {
-      $('.gototop').fadeIn('fast');
+      $('.gototop').show();
     } else {
-      $('.gototop').fadeOut('fast');
+      $('.gototop').hide();
     }
   });
   /* mobile navi */
@@ -3258,69 +3327,11 @@ $(document).ready(function() {
     var categories = data;
   })
 
-  /** Sidebar Menu */
-  var $firstLevelHref = $('#menu-widget-1 .menu-item-has-children').children('a');
-
-  $firstLevelHref.each(function(index, el) {
-
-    var url = $(this).attr('href');
-    var slug = url.split("/").pop();
-
-    var $this = $(this);
-
-    $this.attr('data-slug', slug)
-
-    var allCategoriesAPIUrl = 'http://' + window.location.hostname + '/wp-json/wp/v2/categories';
-    $.getJSON(allCategoriesAPIUrl, function(data, status) {
-
-      var result = $.grep(data, function(e) {
-        return e.slug == slug;
-      });
-
-      if (result.length == 0) {
-        // not found
-      } else if (result.length == 1) {
-        $this.attr('data-id', result[0].id)
-          // access the foo property using result[0].foo
-      } else {
-        // multiple items found
-      }
-    })
-
+  $('.wp-caption').each(function(index, el) {
+    if ($(this).children('a').length > 0) {
+      $(this).children('p').addClass('howerable');
+    }
   });
-
-  $firstLevelHref.on('click', function(event) {
-    event.preventDefault();
-
-    $('article').html('<div class="article-preloader"><div></div></div>');
-    $('.current-menu-hovered').removeClass('current-menu-hovered');
-    $('.current-menu-item').removeClass('current-menu-item');
-    $('.current-menu-parent').removeClass('current-menu-parent');
-    $('.current-menu-ancestor').removeClass('current-menu-ancestor');
-    $(this).parent('li').addClass('current-menu-hovered');
-
-    // search ID in class
-    var ID = $(this).attr('data-id');
-
-    var workUriCat = 'http://' + window.location.hostname + '/wp-json/wp/v2/categories/' + ID;
-    $.getJSON(workUriCat, function(data, status) {
-      var catName = data.name;
-      $('article').html('<h1 class="cat-title inner-title" style="background-image: url(http://' + window.location.hostname + '/wp-content/themes/wp-autoleek/img/bg/cat-title.jpg);">' + catName + '</h1>')
-    })
-
-    var workUri = 'http://' + window.location.hostname + '/wp-json/acf/v2/term/category/' + ID;
-    $.getJSON(workUri, function(data, status) {
-
-      var description = data.acf.description;
-      $('article').append(description);
-
-      if (data.acf.title_bg) {
-        var bgi = 'url("' + data.acf.title_bg.url + '");';
-        $('article .cat-title').css('background-image', bgi);
-      }
-    })
-
-  })
 
 
 });
