@@ -1098,7 +1098,7 @@ h1,h2,h3,h4,h5,h6 {
 
       text-align: center;
       p {
-        font-size: 18px;
+        font-size: 19px;
 
         margin-bottom: 0;
 
@@ -1230,7 +1230,7 @@ h1,h2,h3,h4,h5,h6 {
   &.article-sitemap {
     .sitemap-title {
       font-size: 32px;
-      font-weight: bold;
+      font-weight: normal;
       line-height: 3;
 
       width: 100%;
@@ -1747,10 +1747,12 @@ aside {
               position: relative;
               a {
                 padding-left: 40px;
+                padding-top: 6px;
+                padding-bottom: 6px;
               }
               &:before {
                 position: absolute;
-                top: 17px;
+                top: 11px;
                 left: 25px;
 
                 @extend .dblock;
@@ -2067,7 +2069,7 @@ footer {
   .gototop {
     z-index: 2;
     bottom: 20px;
-    background-color: #fff;
+
     &:before {
       position: absolute;
       z-index: 1;
