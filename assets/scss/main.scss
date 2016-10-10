@@ -37,7 +37,8 @@ body {
     }
   }
   &.page-template-page-sitemap,
-  &.page-template-page-contacts {
+  &.page-template-page-contacts,
+  &.page-template-page-advert {
     section {
       background-image: url(../img/bg/article-sitemap.png);
       background-repeat: no-repeat;
@@ -837,7 +838,8 @@ section {
 article {
   @extend .clearfix;
   &.pagest,
-  &.post {
+  &.post,
+  &.fix-styles {
     margin-bottom: 40px;
     .page-title {
       font-size: 32px;
@@ -890,33 +892,22 @@ article {
         @extend .dblock;
       }
     }
+    h3 {
+
+      text-decoration: none;
+      padding-bottom: 0;
+      &:after {
+        display: none;
+      }
+    }
     h4,
     h5,
     h6 {
       font-weight: bold;
 
-      margin-bottom: 30px;
+      margin-bottom: 22px;
     }
-    /*** */
-    /*
-h1,h2,h3,h4,h5,h6,p {
-  &:before {
-    position: relative;
-    @extend .dblock;
-    top: -10px;
-    bottom: -10px;
-    width: 1px;
-    position: absolute;
-    background-color: red;
-  }
-}
-h1,h2,h3,h4,h5,h6 {
-  &:before {
-    background-color: green;
-  }
-}
-*/
-    /*** */
+
     h1 {
       font-size: 32px;
       line-height: 30px;
@@ -1091,7 +1082,7 @@ h1,h2,h3,h4,h5,h6 {
       position: relative;
 
       margin-bottom: 40px;
-      padding-top: 10px;
+      padding-top: 20px;
       padding-right: 30px;
       padding-bottom: 30px;
       padding-left: 30px;
@@ -1101,7 +1092,7 @@ h1,h2,h3,h4,h5,h6 {
         font-size: 19px;
 
         margin-bottom: 0;
-
+line-height: 1.6;
         text-align: center;
       }
       &:after {
@@ -1227,7 +1218,8 @@ h1,h2,h3,h4,h5,h6 {
       }
     }
   }
-  &.article-sitemap {
+  &.article-sitemap,
+  &.article-advert {
     .sitemap-title {
       font-size: 32px;
       font-weight: normal;
@@ -1328,6 +1320,29 @@ h1,h2,h3,h4,h5,h6 {
       }
     }
   }
+  &.article-advert {
+    line-height: 1.4;
+
+    padding-right: 400px;
+    padding-bottom: 30px;
+    .sitemap-title {
+      font-size: 27px;
+      line-height: 1.4;
+
+      width: 100%;
+      /* max-width: 800px; */
+      height: auto;
+      margin-bottom: 20px;
+      padding-top: 0;
+      padding-bottom: 0;
+
+      text-align: left;
+
+      color: #0a67ac;
+      border-bottom: 2px solid #0a67ac;
+      background: none;
+    }
+  }
   &.article-searchresult {
     .search-title {
       font-size: 27px;
@@ -1417,28 +1432,40 @@ h1,h2,h3,h4,h5,h6 {
     }
   }
 }
-.cat-title {
-  font-size: 32px;
-  line-height: 3;
+article {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    &.cat-title {
+      font-size: 32px;
+      line-height: 3;
 
-  height: 100px;
-  margin-bottom: 30px;
+      height: 100px;
+      margin-bottom: 30px;
 
-  text-align: center;
-
-  color: #fff;
-  background-image: url(../img/bg/cat-title.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-  a {
-    text-decoration: none;
-
-    color: #fff;
-    &:hover {
-      text-decoration: none;
+      text-align: center;
 
       color: #fff;
+      background-image: url(../img/bg/cat-title.jpg);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+      a {
+        text-decoration: none;
+
+        color: #fff;
+        &:hover {
+          text-decoration: none;
+
+          color: #fff;
+        }
+      }
+      &:after {
+        display: none;
+      }
     }
   }
 }
@@ -1746,9 +1773,9 @@ aside {
 
               position: relative;
               a {
-                padding-left: 40px;
                 padding-top: 6px;
                 padding-bottom: 6px;
+                padding-left: 40px;
               }
               &:before {
                 position: absolute;
@@ -1765,6 +1792,16 @@ aside {
     }
     &.widget-transparent {
       background-color: transparent;
+    }
+    &.widget-video-post {
+      background-color: transparent;
+      iframe {
+        margin-bottom: 15px;
+      }
+      &.fixed {
+        position: fixed;
+        top: 15px;
+      }
     }
   }
 }
@@ -1963,6 +2000,24 @@ footer {
 @import 'fonts/font_roboto';
 @import 'base64';
 @import 'import/print';
+
+
+@media (min-width: 1800px) {
+  article.error-page {
+    padding-top: 650px;
+  }
+}
+@media (min-width: 1500px) {
+  article.error-page {
+    padding-top: 550px;
+  }
+}
+
+@media (min-width: 1300px) {
+  body.error404 section {
+    background-position: center 10px;
+  }
+}
 @media (min-width: 1201px) {
   header .searcher .search-from-container {
     float: right;
@@ -1995,6 +2050,7 @@ footer {
   body.page-template-page-contacts article {
     padding-right: 15px ;
   }
+  body.page-template-page-advert article,
   body.page-template-page-sitemap article {
     padding-right: 15px;
   }
@@ -2069,20 +2125,19 @@ footer {
   .gototop {
     z-index: 2;
     bottom: 20px;
-
     &:before {
       position: absolute;
       z-index: 1;
-      top: -2px;
-      right: -2px;
-      bottom: -2px;
-      left: -2px;
+      top: -3px;
+      right: -3px;
+      bottom: -3px;
+      left: -3px;
 
       display: block;
 
       content: '';
 
-      border: 1px solid #fff;
+      border: 2px solid #fff;
       border-radius: 50%;
     }
   }
@@ -2095,6 +2150,12 @@ footer {
   footer .copyright:after,
   footer .footer-subscribe:after {
     display: none;
+  }
+  .widget-video-post {
+    display: none;
+  }
+  article.error-page {
+    padding-top: 350px;
   }
 }
 @media (max-width: 845px) {
@@ -2110,6 +2171,7 @@ footer {
   header .searcher form .btn-close {
     line-height: 3;
   }
+  article.fix-styles,
   article.pagest,
   article.post {
     padding-right: 0;
@@ -2151,6 +2213,9 @@ footer {
   .pools-block input[name=vote] {
     padding-bottom: 6px;
   }
+  article.fix-styles h1:after,
+  article.fix-styles h2:after,
+  article.fix-styles h3:after,
   article.pagest h1:after,
   article.pagest h2:after,
   article.pagest h3:after,
@@ -2174,6 +2239,9 @@ footer {
   article.post h6 {
     padding-right: 10px;
     padding-left: 10px;
+  }
+  article.error-page {
+    padding-top: 280px;
   }
 }
 @media (max-width: 650px) {
@@ -2251,6 +2319,9 @@ footer {
   footer .footer-subscribe form {
     width: 100%;
   }
+  article.error-page {
+    padding-top: 230px;
+  }
 }
 @media (max-width: 520px) {
   header .searcher form {
@@ -2309,6 +2380,9 @@ footer {
 
     text-align: center;
   }
+  article.error-page {
+    padding-top: 170px;
+  }
 }
 @media (max-width: 380px) {
   header {
@@ -2316,5 +2390,8 @@ footer {
   }
   footer {
     height: 460px;
+  }
+  article.error-page {
+    padding-top: 160px;
   }
 }

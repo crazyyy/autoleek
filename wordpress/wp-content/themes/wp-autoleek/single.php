@@ -28,7 +28,7 @@
                 <div class="row">
                   <h6 class="populars-title col-md-12">Статьи по теме</h6>
                   <?php while( $my_query->have_posts() ) { $my_query->the_post(); ?>
-                    <div class="populars-item col-md-4 col-sm-4 col-xs-4">
+                    <div class="populars-item col-md-4 col-sm-4 col-xs-12">
                       <a href="<?php the_permalink(); ?>">
                         <?php if ( has_post_thumbnail()) { the_post_thumbnail('small'); } else { ?>
                           <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
@@ -46,7 +46,7 @@
         <div class="row">
           <h6 class="populars-title col-md-12">Интересные статьи</h6>
           <?php $popularpost = new WP_Query( array( 'posts_per_page' => 3, 'meta_key' => 'wpb_post_views_count', 'orderby' => 'meta_value_num', 'order' => 'DESC'  ) ); while ( $popularpost->have_posts() ) : $popularpost->the_post(); ?>
-            <div class="populars-item col-md-4 col-sm-4 col-xs-4">
+            <div class="populars-item col-md-4 col-sm-4 col-xs-12">
               <a href="<?php the_permalink(); ?>">
                 <?php  if ( has_post_thumbnail()) { the_post_thumbnail('small'); } else { ?>
                   <img src="<?php echo catchFirstImage(); ?>" title="<?php the_title(); ?>" alt="<?php the_title(); ?>" />
@@ -62,10 +62,5 @@
       <?php if (function_exists('easy_breadcrumbs')) easy_breadcrumbs(); ?>
     </article>
   <?php endwhile; endif; ?>
-<?php get_sidebar(); ?>
+<?php get_sidebar('single'); ?>
 <?php get_footer(); ?>
-
-
-
-
-

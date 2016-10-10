@@ -79,6 +79,8 @@ if (typeof jQuery === 'undefined') {
       var description = data.acf.description;
       $('article').append(description);
 
+      $('article').addClass('post');
+
       if (data.acf.title_bg) {
         var bgi = 'url("' + data.acf.title_bg.url + '");';
         $('article .cat-title').css('background-image', bgi);
@@ -3249,7 +3251,7 @@ $(document).ready(function() {
   $(".home-carousel").owlCarousel({
     loop: true,
     items: 1,
-    // autoplay: true,
+    autoplay: true,
     nav: true,
     navText: ["<", ">"],
     dots: true
@@ -3334,6 +3336,7 @@ $(document).ready(function() {
   });
 
 
+
 });
 /** set height to img in category loop */
 (function() {
@@ -3368,3 +3371,16 @@ $(document).ready(function() {
 function goBack() {
   window.history.back();
 }
+
+var attached = $('.widget-video-post');
+var attachedWidth = $('.widget-video-post').width();
+var offset = attached.offset();
+
+$(window).bind('scroll', function() {
+  $(attached).width(attachedWidth);
+  if ($(window).scrollTop() > offset.top - 40) {
+    $(attached).addClass('fixed');
+  } else {
+    $(attached).removeClass('fixed');
+  }
+});

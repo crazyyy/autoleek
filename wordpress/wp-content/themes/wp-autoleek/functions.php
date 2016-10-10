@@ -14,6 +14,59 @@ function wpeAdminThemeStyle() {
   wp_enqueue_script( 'wpe-admin-script' );
 }
 
+if(function_exists("register_field_group"))
+{
+  register_field_group(array (
+    'id' => 'acf_video',
+    'title' => 'Видео',
+    'fields' => array (
+      array (
+        'key' => 'field_55c36e54ab933',
+        'label' => 'Видео',
+        'name' => 'video',
+        'type' => 'repeater',
+        'sub_fields' => array (
+          array (
+            'key' => 'field_55c36e65ab934',
+            'label' => 'iframe',
+            'name' => 'iframe',
+            'type' => 'textarea',
+            'column_width' => '',
+            'default_value' => '',
+            'placeholder' => '',
+            'maxlength' => '',
+            'rows' => '',
+            'formatting' => 'html',
+          ),
+        ),
+        'row_min' => '',
+        'row_limit' => '',
+        'layout' => 'table',
+        'button_label' => 'Добавить видео',
+      ),
+    ),
+    'location' => array (
+      array (
+        array (
+          'param' => 'post_type',
+          'operator' => '==',
+          'value' => 'post',
+          'order_no' => 0,
+          'group_no' => 0,
+        ),
+      ),
+    ),
+    'options' => array (
+      'position' => 'normal',
+      'layout' => 'default',
+      'hide_on_screen' => array (
+      ),
+    ),
+    'menu_order' => 0,
+  ));
+}
+
+
 //  Catch first image from post and display it
 function catchFirstImage() {
   global $post, $posts;
