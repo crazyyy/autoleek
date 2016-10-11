@@ -3372,15 +3372,22 @@ function goBack() {
   window.history.back();
 }
 
-var attached = $('.widget-video-post');
-var attachedWidth = $('.widget-video-post').width();
-var offset = attached.offset();
+var $widgetVideoPost = $('.widget-video-post');
+
+if ( $('.widget-video-post').length > 0 ) {
+  var $widgetVideoPost = $('.widget-video-post');
+} else {
+  var $widgetVideoPost = $('.hidden-block');
+}
+
+var attachedWidth = $widgetVideoPost.width();
+var offset = $widgetVideoPost.offset();
 
 $(window).bind('scroll', function() {
-  $(attached).width(attachedWidth);
+  $widgetVideoPost.width(attachedWidth);
   if ($(window).scrollTop() > offset.top - 40) {
-    $(attached).addClass('fixed');
+    $widgetVideoPost.addClass('fixed');
   } else {
-    $(attached).removeClass('fixed');
+    $widgetVideoPost.removeClass('fixed');
   }
 });

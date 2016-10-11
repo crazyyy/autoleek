@@ -21,6 +21,7 @@
   <?php wp_head(); ?>
 </head>
 <body <?php body_class(); ?>>
+<div class="hidden-block"></div>
 <!-- wrapper -->
 <div class="wrapper">
   <header role="banner">
